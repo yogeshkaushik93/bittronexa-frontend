@@ -1,0 +1,193 @@
+:root {
+  --sidebar-bg: #0a0a0a;
+  --accent-cyan: #0891b2;
+  --cyan-hover: rgba(8, 145, 178, 0.15);
+  --cyan-active: #0891b2;
+  --text-hover: #fff;
+  --border-color: #1a1a1a;
+}
+
+.Sidebar {
+  width: 70px;
+  height: 100vh;
+  background: var(--sidebar-bg);
+  transition: 0.3s;
+  border-right: 1px solid var(--border-color);
+  padding: 10px;
+}
+
+.Sidebar.show {
+  width: 330px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.nav-scroll {
+  flex: 1;
+  overflow-y: auto;
+
+  /* Firefox */
+  scrollbar-width: none;
+
+  /* IE / Edge (old) */
+  -ms-overflow-style: none;
+}
+
+/* Chrome / Safari / Edge (WebKit) */
+.nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+
+.nav-logo img {
+  width: 120px;
+  margin: 1rem auto;
+  display: block;
+}
+
+.nav-toggle {
+  position: absolute;
+  right: -28px;
+  top: 1rem;
+  width: 32px;
+  height: 32px;
+  background: var(--accent-cyan);
+  color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+
+.nav-section-title {
+  padding: 1.5rem 1.2rem 0.5rem;
+  color: #6b6b6b;
+  font-size: 1.1rem;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-bottom: 0.4rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  color: gray;
+  cursor: pointer;
+  border-radius: 0.7rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  background: var(--cyan-hover);
+  color: white
+}
+
+.caret-icon {
+  margin-left: auto;
+  transition: transform 0.3s;
+  font-size: 2.3rem;
+}
+
+.active {
+  background: var(--cyan-active);
+  color: #fff !important;
+}
+
+.caret-icon {
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+
+.expanded .caret-icon {
+  transform: rotate(90deg);
+}
+
+/* Custom accordion */
+.custom-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.custom-accordion-body.open {
+  max-height: 500px;
+
+}
+
+.nav-text{
+    font-size: 1.4rem;
+}
+
+.nested-options .nav-link {
+  padding-left: 4rem;
+  font-size: 1.35rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logout */
+.logout-link {
+  padding: 1.2rem 1.5rem;
+  color: #ef4444;
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+/* Collapsed */
+.Sidebar.hide .nav-text,
+.Sidebar.hide .nav-section-title {
+  display: none;
+}
+
+.Sidebar.hide .nested-options {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Blink */
+.blink {
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .Sidebar {
+    position: fixed;          
+    top: 0;
+    left: -330px;             
+    height: 100vh;
+    width: 332px;
+    z-index: 9999;
+    transition: left 0.3s ease;
+  }
+
+  .Sidebar.show {
+    width: 300px;
+    left: 0;                  
+  }
+
+  .Sidebar.hide {
+    left: -330px;             
+  }
+}
