@@ -9,7 +9,6 @@ import { MainContent } from "../../constants/content/MainContent";
 import { useSelector } from "react-redux";
 import { sendWithdrawalresponse } from "../../api/payment-api";
 
-// eslint-disable-next-line react/prop-types
 const UsdtWithdrawal = ({
   amount,
   isModalOpen,
@@ -53,7 +52,7 @@ const UsdtWithdrawal = ({
         const usdtContract = new ethers.Contract(
           usdtAddress,
           usdtABI,
-          provider
+          provider,
         );
 
         const amountInWei = ethers.parseUnits(amount.toString(), 18);
@@ -76,7 +75,7 @@ const UsdtWithdrawal = ({
 
         const tx = await contractWithAdminSigner.transfer(
           userWalletAddress,
-          amountInWei
+          amountInWei,
         );
         await tx.wait();
         await transactionHandler({

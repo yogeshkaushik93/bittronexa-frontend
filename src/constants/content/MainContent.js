@@ -12,8 +12,8 @@ export const MainContent = {
 };
 
 export const backendConfig = {
-  base: "https://twdtdxds-6070.inc1.devtunnels.ms/api",
-  origin: "https://twdtdxds-6070.inc1.devtunnels.ms/",
+  // base: "https://twdtdxds-6070.inc1.devtunnels.ms/api",
+  // origin: "https://twdtdxds-6070.inc1.devtunnels.ms/",
 
   // base: "http://172.20.10.7:6070/api",
   // origin: "http://172.20.10.7:6070",
@@ -21,6 +21,6 @@ export const backendConfig = {
   // base: "http://198.168.29.180:6070/api",
   // origin: "http://198.168.29.180:6070",
 
-  // base: "https://api.bittronexa.com/api",
-  // origin: "https://api.bittronexa.com",
+  base: "https://api.bittronexa.com/api",
+  origin: "https://api.bittronexa.com",
 };
