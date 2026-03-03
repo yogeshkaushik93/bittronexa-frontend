@@ -184,7 +184,7 @@ const MakeInvestment = () => {
             )}
 
             {/* Submit Button */}
-            <button
+            {/* <button
               onClick={handleAction}
               disabled={loading}
               className={`w-full h-16 rounded-2xl font-black text-xl flex items-center justify-center gap-3 transition-all transform active:scale-95 shadow-xl ${
@@ -201,7 +201,7 @@ const MakeInvestment = () => {
                   <CheckCircle2 size={24} />
                 </>
               )}
-            </button>
+            </button> */}
 
             {method === "QR" && (
               <p className="text-center text-xs text-slate-500 italic">
