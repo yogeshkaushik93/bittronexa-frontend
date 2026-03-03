@@ -27,7 +27,7 @@ const Deposit = () => {
   const navigate = useNavigate();
 
   const startDeposit = async () => {
-    if (!amount || Number(amount) < 20) {
+    if (!amount || Number(amount) < 0) {
       alert("Minimum deposit 20 USDT");
       return;
     }
@@ -66,7 +66,8 @@ const Deposit = () => {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
-        const newStatus = res.data.deposit.status;
+        const newStatus = res.data?.data?.status;
+        console.log("Checked status:", newStatus);
         if (newStatus === "confirmed") {
           setStatus("confirmed");
           clearInterval(interval);

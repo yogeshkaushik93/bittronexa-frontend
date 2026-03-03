@@ -20,6 +20,8 @@ export const backendConfig = {
 
   // base: "http://198.168.29.180:6070/api",
   // origin: "http://198.168.29.180:6070",
+  // base: "http://localhost:6070/api",
+  // origin: "http://localhost:6070",
 
   base: "https://api.bittronexa.com/api",
   origin: "https://api.bittronexa.com",
