@@ -175,7 +175,7 @@ const MakeInvestment = () => {
                   type="text"
                   value={otp}
                   onChange={(e) => setotp(e.target.value.replace(/\D/g, ""))}
-                  placeholder="6-digit OTP"
+                  placeholder="4-digit OTP"
                   icon={Coins}
                   rightButton="Get OTP"
                   onRightButtonClick={handleGetOtp}
