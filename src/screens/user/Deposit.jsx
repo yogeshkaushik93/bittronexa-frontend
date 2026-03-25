@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { backendConfig } from "../.././constants/content/MainContent";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Deposit = () => {
   const [amount, setAmount] = useState("");
@@ -27,8 +28,13 @@ const Deposit = () => {
   const navigate = useNavigate();
 
   const startDeposit = async () => {
-    if (!amount || Number(amount) < 0) {
-      alert("Minimum deposit 20 USDT");
+    if (!amount || Number(amount) < 100) {
+      Swal.fire({
+        icon: "warning",
+        title: "Minimum Deposit",
+        text: "Minimum deposit is 100 USDT",
+        confirmButtonColor: "#10b981",
+      });
       return;
     }
 

@@ -14,6 +14,7 @@ export const AuthenticatedRoutes = {
   USER_PROFILE: "/profile",
   BANK_DETAILS: "/bank-details",
   PACKAGE_REPORT: "/package-report",
+  CUSTOM_ROI: "/roi-level",
   // SELF_INCOME_REPORT: "/self-income-report",
   REFERRAL_INCOME_REPORT: "/referral-income-report",
   DEPOSIT_USDT: "/deposit-usdt",

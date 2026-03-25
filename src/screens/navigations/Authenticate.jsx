@@ -132,6 +132,7 @@ import AddFundBusiness from "../../components/bittronexapages/AddFundBusiness";
 import MaintenanceMode from "../admin/MaintenanceMode";
 import DeductInvestment from "../admin/DeductInvestment";
 import Deposit from "../user/Deposit";
+import Roi from "../admin/Roi";
 const Authenticate = () => {
   const role = localStorage.getItem("role");
   return (
@@ -179,6 +180,12 @@ const Authenticate = () => {
                   inner={<RankReward />}
                   name="Rank Reward Report"
                 />
+              }
+            />
+            <Route
+              path={AuthenticatedRoutes.CUSTOM_ROI}
+              element={
+                <DashboardMain inner={<Roi />} name="Rank Reward Report" />
               }
             />
             <Route

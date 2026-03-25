@@ -1,15 +1,37 @@
 import React from "react";
-import { FaUsers, FaUserTie, FaWallet, FaRegNewspaper, FaBusinessTime, FaUser } from "react-icons/fa";
+import {
+  FaUsers,
+  FaUserTie,
+  FaWallet,
+  FaRegNewspaper,
+  FaBusinessTime,
+  FaUser,
+} from "react-icons/fa";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
-import { LuHandPlatter, LuPackageSearch, LuPickaxe, LuSettings } from "react-icons/lu";
+import {
+  LuHandPlatter,
+  LuPackageSearch,
+  LuPickaxe,
+  LuSettings,
+} from "react-icons/lu";
 import { AuthenticatedRoutes } from "../Routes";
 import { MdOutlineAddCard } from "react-icons/md";
 import { BiMoney, BiSupport } from "react-icons/bi";
 import { TfiAnnouncement } from "react-icons/tfi";
-import { BanknoteArrowDown, BookAlert, FileText, FolderSync, History, icons, Network, Package, ShieldCheck } from "lucide-react";
+import {
+  BanknoteArrowDown,
+  BookAlert,
+  FileText,
+  FolderSync,
+  History,
+  icons,
+  Network,
+  Package,
+  ShieldCheck,
+} from "lucide-react";
 import { TbHistoryToggle, TbRecharging } from "react-icons/tb";
 import { MainContent } from "./MainContent";
-import { DoorClosedLocked } from 'lucide-react';
+import { DoorClosedLocked } from "lucide-react";
 import { BsFillPinAngleFill } from "react-icons/bs";
 import { SiWolframmathematica } from "react-icons/si";
 import { VscActivateBreakpoints } from "react-icons/vsc";
@@ -64,10 +86,8 @@ export const SidebarContent = {
               name: "Self Service Package Activation History",
               link: AuthenticatedRoutes.SERVICE_PACKAGE_ACTIVATION_HISTORY,
             },
-          ]
+          ],
         },
-
-
 
         {
           id: "Arbitrage Bot",
@@ -121,7 +141,6 @@ export const SidebarContent = {
           icon: <LuSettings size={20} />,
           name: "Activate Packages ",
           options: [
-
             {
               id: " Activate Service Package To Other User",
               name: "Activate Service Package To Other User",
@@ -145,7 +164,6 @@ export const SidebarContent = {
             },
           ],
         },
-
 
         // {
         //   id: "Package Wallet History",
@@ -196,15 +214,47 @@ export const SidebarContent = {
           icon: <LuPackageSearch size={20} />,
           name: "Income Report",
           options: [
-            { id: "Level Income", name: " Trade Level Income", link: AuthenticatedRoutes.LEVEL_INCOME_REPORT },
-            { id: "Matching Income", name: "Matching Income", link: AuthenticatedRoutes.MATCHING_INCOME },
-            { id: "Club Income", name: "Club Income", link: AuthenticatedRoutes.CLUB_INCOME },
-            { id: "Fast Track Income", name: "Fast Track Income", link: AuthenticatedRoutes.FAST_TRACK_INCOME },
+            {
+              id: "Level Income",
+              name: " Trade Level Income",
+              link: AuthenticatedRoutes.LEVEL_INCOME_REPORT,
+            },
+            {
+              id: "Matching Income",
+              name: "Matching Income",
+              link: AuthenticatedRoutes.MATCHING_INCOME,
+            },
+            {
+              id: "Club Income",
+              name: "Club Income",
+              link: AuthenticatedRoutes.CLUB_INCOME,
+            },
+            {
+              id: "Fast Track Income",
+              name: "Fast Track Income",
+              link: AuthenticatedRoutes.FAST_TRACK_INCOME,
+            },
             // { id: "Achievement Income", name: "Achievement Income", link: AuthenticatedRoutes.ACHIEVEMENT_INCOME },
-            { id: "Trading Profit", name: "Trading Profit", link: AuthenticatedRoutes.ROI_INCOME_REPORT }, // from bot
-            { id: "Service Level Income", name: "Service Level Income", link: AuthenticatedRoutes.TRADING_LEVEL_INCOME },
-            { id: "Reward Income", name: "Reward Income", link: AuthenticatedRoutes.REWARD_INCOME },
-            { id: "IB Income", name: "IB Income", link: AuthenticatedRoutes.IB_INCOME },
+            {
+              id: "Trading Profit",
+              name: "Trading Profit",
+              link: AuthenticatedRoutes.ROI_INCOME_REPORT,
+            }, // from bot
+            {
+              id: "Service Level Income",
+              name: "Service Level Income",
+              link: AuthenticatedRoutes.TRADING_LEVEL_INCOME,
+            },
+            {
+              id: "Reward Income",
+              name: "Reward Income",
+              link: AuthenticatedRoutes.REWARD_INCOME,
+            },
+            {
+              id: "IB Income",
+              name: "IB Income",
+              link: AuthenticatedRoutes.IB_INCOME,
+            },
             //      {
             //   id: "Leadership",
             //   icon: <ShieldCheck />,
@@ -221,7 +271,6 @@ export const SidebarContent = {
         //   link: AuthenticatedRoutes.DEDUCT_FUND_HISTORY_BY_ADMIN,
         // },
 
-
         {
           id: "Portfolio",
           icon: <BookAlert size={22} />,
@@ -234,9 +283,21 @@ export const SidebarContent = {
           icon: <FaWallet size={20} />,
           name: "Financial",
           options: [
-            { id: "Withdraw Fund", name: "Withdraw Fund", link: AuthenticatedRoutes.WITHDRAW_FUND_BOT },
-            { id: "Withdrawal Report", name: "Withdraw Fund Report", link: AuthenticatedRoutes.WITHDRAW_FUND_REPORT },
-            { id: "Principal Withdraw Report", name: "Principal Withdraw Report", link: AuthenticatedRoutes.TOPUP_MAIN_WALLET },
+            {
+              id: "Withdraw Fund",
+              name: "Withdraw Fund",
+              link: AuthenticatedRoutes.WITHDRAW_FUND_BOT,
+            },
+            {
+              id: "Withdrawal Report",
+              name: "Withdraw Fund Report",
+              link: AuthenticatedRoutes.WITHDRAW_FUND_REPORT,
+            },
+            {
+              id: "Principal Withdraw Report",
+              name: "Principal Withdraw Report",
+              link: AuthenticatedRoutes.TOPUP_MAIN_WALLET,
+            },
           ],
         },
         {
@@ -244,8 +305,16 @@ export const SidebarContent = {
           icon: <FolderSync size={20} />,
           name: "P2P Transfer",
           options: [
-            { id: "P2P Transfer", name: "P2P Transfer", link: AuthenticatedRoutes.TRANSFER_FUND },
-            { id: "P2P Transfer Report", name: "P2P Transfer Report", link: AuthenticatedRoutes.TRANSFER_FUND_REPORT },
+            {
+              id: "P2P Transfer",
+              name: "P2P Transfer",
+              link: AuthenticatedRoutes.TRANSFER_FUND,
+            },
+            {
+              id: "P2P Transfer Report",
+              name: "P2P Transfer Report",
+              link: AuthenticatedRoutes.TRANSFER_FUND_REPORT,
+            },
           ],
         },
         {
@@ -253,8 +322,16 @@ export const SidebarContent = {
           icon: <FolderSync size={20} />,
           name: "Swap",
           options: [
-            { id: "Swap", name: "Swap (Main → Package Wallet)", link: AuthenticatedRoutes.SWAP },
-            { id: "Swap History", name: "Swap History", link: AuthenticatedRoutes.SWAP_HISTORY },
+            {
+              id: "Swap",
+              name: "Swap (Main → Package Wallet)",
+              link: AuthenticatedRoutes.SWAP,
+            },
+            {
+              id: "Swap History",
+              name: "Swap History",
+              link: AuthenticatedRoutes.SWAP_HISTORY,
+            },
           ],
         },
 
@@ -264,8 +341,6 @@ export const SidebarContent = {
         //   name: "Earning Simulation",
         //   link: AuthenticatedRoutes.EARNING_SIMULATION,
         // },
-
-
       ],
     },
     {
@@ -276,8 +351,16 @@ export const SidebarContent = {
           icon: <BiSupport size={20} />,
           name: "Help & Support",
           options: [
-            { id: "Raise Ticket", name: "Raise Ticket", link: AuthenticatedRoutes.SUPPORT_RAISE_TICKET },
-            { id: "Ticket History", name: "Raise Ticket History", link: AuthenticatedRoutes.SUPPORT_RAISE_TICKET_HISTORY },
+            {
+              id: "Raise Ticket",
+              name: "Raise Ticket",
+              link: AuthenticatedRoutes.SUPPORT_RAISE_TICKET,
+            },
+            {
+              id: "Ticket History",
+              name: "Raise Ticket History",
+              link: AuthenticatedRoutes.SUPPORT_RAISE_TICKET_HISTORY,
+            },
           ],
         },
         {
@@ -306,9 +389,21 @@ export const SidebarContent = {
           icon: <FaUsers size={20} />,
           name: "Users",
           options: [
-            { id: "All Users", name: "All Users", link: AuthenticatedRoutes.ALL_USERS },
-            { id: "Active Users", name: "Active Users", link: AuthenticatedRoutes.ACTIVE_USERS },
-            { id: "Bulk Register", name: "Bulk Register", link: AuthenticatedRoutes.BULK_REGISTER },
+            {
+              id: "All Users",
+              name: "All Users",
+              link: AuthenticatedRoutes.ALL_USERS,
+            },
+            {
+              id: "Active Users",
+              name: "Active Users",
+              link: AuthenticatedRoutes.ACTIVE_USERS,
+            },
+            {
+              id: "Bulk Register",
+              name: "Bulk Register",
+              link: AuthenticatedRoutes.BULK_REGISTER,
+            },
             // { id: "Admin Register", name: "Adminv Register", link: AuthenticatedRoutes.BULK_REGISTER },
           ],
         },
@@ -318,15 +413,43 @@ export const SidebarContent = {
           icon: <FaUserTie size={20} />,
           name: "Financial Reports",
           options: [
-            { id: "Package Purchase History", name: "Package Purchase History", link: AuthenticatedRoutes.PURCHASE_PLAN_HISTORY },
-            { id: "Service Package History", name: "Service Package Purchase History", link: AuthenticatedRoutes.SERVICE_PACKAGE_HISTORY },
+            {
+              id: "Package Purchase History",
+              name: "Package Purchase History",
+              link: AuthenticatedRoutes.PURCHASE_PLAN_HISTORY,
+            },
+            {
+              id: "Service Package History",
+              name: "Service Package Purchase History",
+              link: AuthenticatedRoutes.SERVICE_PACKAGE_HISTORY,
+            },
 
-            { id: "Service Level Income History", name: "Service Level Income History", link: AuthenticatedRoutes.SERVICE_LEVEL_INCOME_REPORT },
+            {
+              id: "Service Level Income History",
+              name: "Service Level Income History",
+              link: AuthenticatedRoutes.SERVICE_LEVEL_INCOME_REPORT,
+            },
 
-            { id: "Trading Profit Income History", name: "Trading Profit Income History", link: AuthenticatedRoutes.ROI_INCOME_HISTORY },
-            { id: " Trade Level Income History", name: " Trade Level Income History", link: AuthenticatedRoutes.LEVEL_INCOME_REPORT },
-            { id: "Matching Income History", name: "Matching Income History", link: AuthenticatedRoutes.MATCHING_INCOME_REPORT_BOTX },
-            { id: "Club Income History", name: "Club Income History", link: AuthenticatedRoutes.CLUB_INCOME_HISTORY },
+            {
+              id: "Trading Profit Income History",
+              name: "Trading Profit Income History",
+              link: AuthenticatedRoutes.ROI_INCOME_HISTORY,
+            },
+            {
+              id: " Trade Level Income History",
+              name: " Trade Level Income History",
+              link: AuthenticatedRoutes.LEVEL_INCOME_REPORT,
+            },
+            {
+              id: "Matching Income History",
+              name: "Matching Income History",
+              link: AuthenticatedRoutes.MATCHING_INCOME_REPORT_BOTX,
+            },
+            {
+              id: "Club Income History",
+              name: "Club Income History",
+              link: AuthenticatedRoutes.CLUB_INCOME_HISTORY,
+            },
             {
               id: "Rank Reward History",
               name: "Rank Reward History",
@@ -336,8 +459,16 @@ export const SidebarContent = {
             // { id: "Trading Profit History", name: "Trading Profit History", link: AuthenticatedRoutes.TRADING_PROFIT_HISTORY },
             // { id: "Trading Level Income History", name: "Trading Level Income History", link: AuthenticatedRoutes.TRADING_LEVEL_INCOME_HISTORY },
             // { id: "Reward Income History", name: "Reward Income History", link: AuthenticatedRoutes.REWARD_INCOME_HISTORY },
-            { id: "IB Income History", name: "IB Income History", link: AuthenticatedRoutes.ADMIN_IB_INCOME_HISTORY },
-            { id: "Fast Track Income History", name: "Fast Track Income History", link: AuthenticatedRoutes.ADMIN_FAST_TRACK_HISTORY },
+            {
+              id: "IB Income History",
+              name: "IB Income History",
+              link: AuthenticatedRoutes.ADMIN_IB_INCOME_HISTORY,
+            },
+            {
+              id: "Fast Track Income History",
+              name: "Fast Track Income History",
+              link: AuthenticatedRoutes.ADMIN_FAST_TRACK_HISTORY,
+            },
           ],
         },
 
@@ -347,14 +478,12 @@ export const SidebarContent = {
           name: "Activate Service Package",
           link: AuthenticatedRoutes.TOPUP_USERS,
         },
-
         {
           id: "Add Fund to Package Wallet",
           icon: <TbRecharging size={20} />,
           name: "Add Fund to Wallet",
           link: AuthenticatedRoutes.TOPUP_PACKAGE_WALLET,
         },
-
         {
           id: "TopupPackageWalletHistory",
           icon: <TbHistoryToggle size={20} />,
@@ -392,16 +521,22 @@ export const SidebarContent = {
         //   name: "P2P History",
         //   link: AuthenticatedRoutes.P2P_HISTORY,
         // },
-
         {
           id: "Withdrawal Requests",
           icon: <FaWallet size={20} />,
           name: "Withdrawal",
           options: [
-            { id: "Withdrawal History", name: "Withdrawal History", link: AuthenticatedRoutes.APPROVED_WITHDRAWAL_REQUEST },
+            {
+              id: "Withdrawal History",
+              name: "Withdrawal History",
+              link: AuthenticatedRoutes.APPROVED_WITHDRAWAL_REQUEST,
+            },
             // { id: "Pending Withdrawals", name: "Pending Withdrawals", link: AuthenticatedRoutes.PENDING_WITHDRAWAL_REQUEST },
-            { id: "Principal Withdrawal History", name: "Principal Withdrawal History", link: AuthenticatedRoutes.PRINCIPLE_WITHDRAW_REPORT },
-
+            {
+              id: "Principal Withdrawal History",
+              name: "Principal Withdrawal History",
+              link: AuthenticatedRoutes.PRINCIPLE_WITHDRAW_REPORT,
+            },
           ],
         },
 
@@ -410,11 +545,41 @@ export const SidebarContent = {
           icon: <FaWallet size={20} />,
           name: "Admin Control",
           options: [
-            { id: "Withdrawal Block", name: "Withdrawal Block", link: AuthenticatedRoutes.WITHDRAWAL_BLOCK },
-            { id: "Maintenance Mode", name: "Maintenance Mode", link: AuthenticatedRoutes.MAINTENANCE_MODE },
-            { id: "Deduct Fund", name: "Deduct Fund", link: AuthenticatedRoutes.DEDUCT_FUND },
-            { id: "Deduct Investment", name: "Deduct Investment", link: AuthenticatedRoutes.DEDUCT_INVESTMENT },
-            { id: "Deduct Fund History", name: "Deduct Fund History", link: AuthenticatedRoutes.ADMIN_DEDUCT_FUND_HISTORY },
+            {
+              id: "Withdrawal Block",
+              name: "Withdrawal Block",
+              link: AuthenticatedRoutes.WITHDRAWAL_BLOCK,
+            },
+            {
+              id: "Maintenance Mode",
+              name: "Maintenance Mode",
+              link: AuthenticatedRoutes.MAINTENANCE_MODE,
+            },
+            {
+              id: "Deduct Fund",
+              name: "Deduct Fund",
+              link: AuthenticatedRoutes.DEDUCT_FUND,
+            },
+            {
+              id: "Deduct Investment",
+              name: "Deduct Investment",
+              link: AuthenticatedRoutes.DEDUCT_INVESTMENT,
+            },
+            {
+              id: "Deduct Fund History",
+              name: "Deduct Fund History",
+              link: AuthenticatedRoutes.ADMIN_DEDUCT_FUND_HISTORY,
+            },
+            // {
+            //   id: "ROI Settings",
+            //   name: "ROI Settings",
+            //   link: AuthenticatedRoutes.CUSTOM_ROI,
+            // },
+            {
+              id: "Deduct Fund History",
+              name: "Deduct Fund History",
+              link: AuthenticatedRoutes.ADMIN_DEDUCT_FUND_HISTORY,
+            },
             // { id: "Transaction Limit", name: "Transaction Limit", link: AuthenticatedRoutes.TRANSACTION_LIMIT },
             // { id: "Package Settings", name: "Package Settings", link: AuthenticatedRoutes.PACKAGE_SETTINGS },
           ],
@@ -476,11 +641,14 @@ export const SidebarContent = {
           icon: <BiSupport size={20} />,
           name: "Help & Support",
           options: [
-            { id: "Support history", name: "Raise Ticket History", link: AuthenticatedRoutes.RAISE_TICKET_LIST },
+            {
+              id: "Support history",
+              name: "Raise Ticket History",
+              link: AuthenticatedRoutes.RAISE_TICKET_LIST,
+            },
           ],
         },
       ],
     },
-
   ],
 };
