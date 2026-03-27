@@ -8,7 +8,6 @@ const MatchingIncomeReport = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Fetch Matching Income Data
   const fetchData = async () => {
     setLoading(true);
     setError(null);

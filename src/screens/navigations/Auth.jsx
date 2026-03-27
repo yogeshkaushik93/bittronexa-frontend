@@ -5,8 +5,9 @@ import AuthRegisterForm from "../../components/auth/AuthRegisterForm";
 import AuthLoginForm from "../../components/auth/AuthLoginForm";
 import UserMain from "../website/UserMain";
 import AuthAdminLoginForm from "../../components/auth/AuthAdminLoginForm";
-import ForgotPassword from "../../components/ui/ForgotPassword";
 import Maintenance from "../../components/Maintenance";
+import ForgotPassword from "../../components/auth/ForgotPassword";
+
 const Auth = () => {
   return (
     <>
@@ -32,7 +33,6 @@ const Auth = () => {
           element={<Maintenance />}
         />
 
-        {/* <Route path="*" element={<AuthMain inner={<AuthLoginForm />} />} /> */}
         <Route path="*" element={<UserMain />} />
       </Routes>
     </>

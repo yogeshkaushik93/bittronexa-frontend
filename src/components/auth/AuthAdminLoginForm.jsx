@@ -187,7 +187,7 @@ const AuthAdminLoginForm = () => {
           <div data-aos="fade-up" className="btns w-full">
             <Button2
               onClick={handleAdminLogin}
-              name={"Sign In"}
+              name={loading ? "Logging in..." : "Login"}
               disabled={loading}
             />
           </div>

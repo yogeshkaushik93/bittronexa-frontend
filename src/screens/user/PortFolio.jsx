@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { getInvestmentHistory } from "../../../api/user-api";
-import { dateFormat, formatValueWithCurrency, maskMemberIdFourLatter } from "../../../utils/additionalFunc";
-import ReusableDataTable from "../../../components/ui/ReusableTable";
+import { getInvestmentHistory } from "../../api/user-api";
+import { dateFormat, formatValueWithCurrency, maskMemberIdFourLatter } from "../../utils/additionalFunc";
 import { useSelector } from "react-redux";
+import ReusableDataTable from "../../components/ui/ReusableTable";
 
 
 const PortFolio = () => {
-  const {user} = useSelector((state) => state?.userInfo?.userInfo);
-  console.log(user)
+  const user = useSelector((state) => state.userInfo?.userInfo?.user);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
 

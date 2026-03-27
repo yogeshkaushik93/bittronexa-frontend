@@ -1,176 +1,26 @@
-// // import React from 'react'
-
-// // const EditProfile = () => {
-// //   return (
-// //     <div>
-// //       <h1>hellow edit profile </h1>
-// //     </div>
-// //   )
-// // }
-
-// // export default EditProfile
-
-
-// // EditProfile.jsx
-// import React from "react";
-// import { useLocation } from "react-router-dom";
-
-// const EditProfile = () => {
-//   const location = useLocation();
-//   const rowData = location.state?.rowData;
-
-//   console.log("🟢 Row Data received:", rowData);
-
-//   return (
-//     <div>
-//       <h1>Hello Edit Profile</h1>
-//       {rowData ? (
-//         <pre>{JSON.stringify(rowData, null, 2)}</pre>
-//       ) : (
-//         <p>No data received</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default EditProfile;
-
-
-
-// import React, { useState } from "react";
-// import { useLocation } from "react-router-dom";
-
-// const EditProfile = () => {
-//   const location = useLocation();
-//   const rowData = location.state?.rowData;
-
-//   const [formData, setFormData] = useState({
-//     name: rowData?.name || "",
-//     email: rowData?.email || "",
-//     role: rowData?.role || "user",
-//     status: rowData?.status || false,
-//     rank: rowData?.rank || "None",
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value, type, checked } = e.target;
-//     setFormData((prev) => ({
-//       ...prev,
-//       [name]: type === "checkbox" ? checked : value,
-//     }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     console.log("🟢 Updated Profile Data:", formData);
-//     alert("Profile updated successfully (check console)");
-//   };
-
-//   return (
-//     <div className="min-h-screen  text-white flex flex-col  p-6">
-//       <h1 className="text-3xl font-bold mb-6">Edit Profile</h1>
-//       {rowData ? (
-//         <form
-//           onSubmit={handleSubmit}
-//           className="bg-gray-800 p-6 rounded-2xl w-full max-w-md space-y-4 shadow-lg"
-//         >
-//           <div>
-//             <label className="block text-gray-300 mb-1">Name</label>
-//             <input
-//               type="text"
-//               name="name"
-//               value={formData.name}
-//               onChange={handleChange}
-//               className="w-full p-2 text-xl rounded bg-gray-700 focus:outline-none"
-//             />
-//           </div>
-
-//           <div>
-//             <label className="block text-gray-300 mb-1">Email</label>
-//             <input
-//               type="email"
-//               name="email"
-//               value={formData.email}
-//               onChange={handleChange}
-//               className="w-full p-2 text-xl rounded bg-gray-700 focus:outline-none"
-//             />
-//           </div>
-
-//           <div>
-//             <label className="block text-gray-300 mb-1">Role</label>
-//             <select
-//               name="role"
-//               value={formData.role}
-//               onChange={handleChange}
-//               className="w-full p-2 text-xl rounded bg-gray-700 focus:outline-none"
-//             >
-//               <option value="user">User</option>
-//               <option value="admin">Admin</option>
-//             </select>
-//           </div>
-
-//           <div>
-//             <label className="block text-gray-300 mb-1">Rank</label>
-//             <input
-//               type="text"
-//               name="rank"
-//               value={formData.rank}
-//               onChange={handleChange}
-//               className="w-full p-2 text-xl rounded bg-gray-700 focus:outline-none"
-//             />
-//           </div>
-
-//           <div className="flex items-center space-x-2">
-//             <input
-//               type="checkbox"
-//               name="status"
-//               checked={formData.status}
-//               onChange={handleChange}
-//               className="w-4 h-4"
-//             />
-//             <label className="text-gray-300">Active Status</label>
-//           </div>
-
-//           <button
-//             type="submit"
-//             className="w-full bg-blue-600 hover:bg-blue-700 transition p-2 rounded-lg font-semibold"
-//           >
-//             Save Changes
-//           </button>
-//         </form>
-//       ) : (
-//         <p>No data received</p>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default EditProfile;
 
 
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { User, Mail, Shield, Award, CheckCircle, Save, ArrowLeft, FileLock, LockKeyhole } from "lucide-react";
+import { User, Mail, CheckCircle, Save, FileLock, LockKeyhole } from "lucide-react";
 import { editUserBotxAdmin } from "../../../api/admin-api";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { Password } from "primereact/password";
-// import { loading } from "../../assets";
+
 const EditProfile = () => {
   const location = useLocation();
   const rowData = location.state?.rowData;
-console.log(rowData)
   const [formData, setFormData] = useState({
     name: rowData?.name || "",
     email: rowData?.email || "",
     role: rowData?.role || "user",
     status: rowData?.status || false,
     rank: rowData?.rank || "None",
-    tnxPassword:"",
+    tnxPassword: "",
     Password: "",
   });
-const navigate = useNavigate();
-const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false)
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
@@ -179,52 +29,52 @@ const [loading, setLoading] = useState(false)
     }));
   };
 
-const handleSubmit = async (e) => {
-  setLoading(true)
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    setLoading(true)
+    e.preventDefault();
 
-  const payload = {
-    name: formData.name,
-    email: formData.email,
-    userId: rowData._id,
-    tnxPassword:formData.tnxPassword,
-    Password:formData.Password
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      userId: rowData._id,
+      tnxPassword: formData.tnxPassword,
+      Password: formData.Password
 
-  };
+    };
 
-  console.log("🟢 Payload to send:", payload);
+    console.log("🟢 Payload to send:", payload);
 
-  try {
-    const res = await editUserBotxAdmin(payload);
-    console.log("🟢 API Response:", res);
+    try {
+      const res = await editUserBotxAdmin(payload);
+      console.log("🟢 API Response:", res);
 
-    if (res?.success) {
-      Swal.fire({
-        icon: "success",
-        title: "Profile Updated",
-        text: res?.message || "Admin profile updated successfully!",
-        showConfirmButton: false,
-        timer: 2000,
-      });
+      if (res?.success) {
+        Swal.fire({
+          icon: "success",
+          title: "Profile Updated",
+          text: res?.message || "Admin profile updated successfully!",
+          showConfirmButton: false,
+          timer: 2000,
+        });
         navigate(-1); // Go back to the previous page
-    } else {
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Update Failed",
+          text: res?.message || "Something went wrong!",
+        });
+      }
+    } catch (error) {
+      console.error("❌ Error updating profile:", error);
       Swal.fire({
         icon: "error",
-        title: "Update Failed",
-        text: res?.message || "Something went wrong!",
+        title: "Server Error",
+        text: "Unable to update profile. Please try again later.",
       });
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    console.error("❌ Error updating profile:", error);
-    Swal.fire({
-      icon: "error",
-      title: "Server Error",
-      text: "Unable to update profile. Please try again later.",
-    });
-  }finally {
-    setLoading(false); 
-  }
-};
+  };
 
   return (
     <div className=" text-white flex flex-col items-center justify-center p-6">
@@ -239,7 +89,7 @@ const handleSubmit = async (e) => {
         </button>
       </div> */}
 
-    
+
 
       {rowData ? (
         <form
@@ -279,7 +129,7 @@ const handleSubmit = async (e) => {
           </div>
           <div className="space-y-2">
             <label className="flex items-center gap-2 text-2xl text-gray-300 font-semibold">
-              
+
               <FileLock className="w-8 h-8 text-blue-400" />
               Transaction Password
             </label>
@@ -352,17 +202,16 @@ const handleSubmit = async (e) => {
               id="status-toggle"
               disabled
             />
-            <label 
-              htmlFor="status-toggle" 
+            <label
+              htmlFor="status-toggle"
               className="flex items-center gap-3 text-2xl text-gray-300 cursor-pointer select-none"
             >
               <CheckCircle className={`w-8 h-8 ${formData.status ? 'text-green-400' : 'text-gray-500'}`} />
               Active Status
-              <span className={`ml-2 px-3 py-1 rounded-full text-xl font-semibold ${
-                formData.status 
-                  ? 'bg-green-500/20 text-green-400 border border-green-500/50' 
+              <span className={`ml-2 px-3 py-1 rounded-full text-xl font-semibold ${formData.status
+                  ? 'bg-green-500/20 text-green-400 border border-green-500/50'
                   : 'bg-gray-500/20 text-gray-400 border border-gray-500/50'
-              }`}>
+                }`}>
                 {formData.status ? 'Active' : 'Inactive'}
               </span>
             </label>
@@ -374,7 +223,7 @@ const handleSubmit = async (e) => {
             className="w-full bg-gradient-to-r from-black-600 to-gray-600 hover:from-gray-700 hover:to-black-700 transition-all p-4 rounded-xl font-bold text-2xl shadow-lg hover:shadow-purple-500/50 flex items-center justify-center gap-3 group"
           >
             <Save className="w-8 h-8 group-hover:scale-110 transition-transform" />
-           { loading ? 'Saving...' : 'Save Changes' }
+            {loading ? 'Saving...' : 'Save Changes'}
           </button>
         </form>
       ) : (

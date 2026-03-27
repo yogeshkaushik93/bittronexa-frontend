@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserInfo } from "../../api/auth-api";
 import { setUserInfo } from "../../redux/slice/UserInfoSlice";
 
-const Withdrawal = () => {
+const WalletSetting = () => {
   const [formData, setFormData] = useState({
     wallet: "USDT.BEP20",
     address: "",
@@ -193,4 +193,4 @@ const Withdrawal = () => {
   );
 };
 
-export default Withdrawal;
+export default WalletSetting;

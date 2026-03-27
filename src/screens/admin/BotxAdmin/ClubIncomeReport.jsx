@@ -1,26 +1,3 @@
-// import React, { useEffect } from 'react'
-// import { getClubIncomeReport } from '../../../api/admin-api';
-
-// const ClubIncomeReport = () => {
-
-//     const fetchData = async () => {
-//         const response = await getClubIncomeReport();
-//         console.log(response)
-//     }
-//     useEffect(() => {
-//         fetchData();
-//     }, []);
-//   return (
-//     <div>
-//       <h1>ClubIncomeReport</h1>
-//     </div>
-//   )
-// }
-
-// export default ClubIncomeReport
-
-
-
 import React, { useEffect, useState } from 'react';
 import ReusableDataTable from '../../../components/ui/ReusableTable';
 import { getClubIncomeReport } from '../../../api/admin-api';

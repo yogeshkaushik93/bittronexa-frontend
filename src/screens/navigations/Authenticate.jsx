@@ -4,61 +4,27 @@ import UserMain from "../website/UserMain";
 import DashboardMain from "../DashboardMain";
 import UserHome from "../user/UserHome";
 import ProfilePage from "../user/ProfilePage";
-import Withdrawal from "../user/Withdrawal";
-import WithdrawalReport from "../user/WithdrawalReport";
-import OverallUserCustomPlan from "../user/OverallUserCustomPlan";
 import TeamTree from "../user/TeamTree";
 import AdminDashboard from "../admin/AdminDashboard";
-import PaymentAproval from "../admin/PaymentAproval";
-import BankDetails from "../user/BankDetails";
-import FundRequestForm from "../user/FundRequestForm";
-import FundTransferForm from "../user/FundTransferForm";
-import FundRequestReport from "../user/FundRequestReport";
-import FundTransferReport from "../user/FundTransferReport";
 import DirectTeamLists from "../user/DirectTeamLists";
-import FundAproval from "../admin/FundAproval";
-import ReferralIncomeReports from "../user/income-pages/ReferralIncomeReports";
-import SpinIncomeReports from "../user/income-pages/SpinIncomeReports";
 import LevelIncomeReports from "../user/income-pages/LevelIncomeReports";
-import RoyaltyIncomeReports from "../user/income-pages/RoyaltyIncomeReports";
-import SelfIncomeReports from "../user/income-pages/SelfIncomeReports";
-import PendingWithdrawalRequest from "../admin/PendingWithdrawalRequest";
-import FundRecieveReport from "../user/FundRecieveReport";
 import CompleteWithdrawalRequest from "../admin/CompleteWithdrawalRequest";
-import RejectWithdrawalRequest from "../admin/RejectWithdrawalRequest";
-import CompleteFundRequest from "../admin/CompleteFundRequest";
-import RejectFundRequest from "../admin/RejectFundRequest";
-import CompletePlanRequest from "../admin/CompletePlanRequest";
-import RejectPlanRequest from "../admin/RejectPlanRequest";
 import ComplainRaiseTicket from "../user/ComplainRaiseTicket";
 import ComplainTicketHistory from "../user/ComplainTicketHistory";
 import ComplainTicketList from "../admin/ComplainTicketList";
 import AllUsersList from "../admin/AllUsersList";
 import PurchasePlanHistory from "../user/PurchasePlanHistory";
-import DirectReferralIncome from "../user/DirectReferralIncome";
 import MatchingIncomeReports from "../user/income-pages/MatchingIncomeReports";
 import AdminMatchingIncomeReports from "../admin/income-pages/AdminMatchingIncomeReports";
 import AdminLevelIncomeReports from "../admin/income-pages/AdminLevelIncomeReports";
-import AdminSelfIncomeReports from "../admin/income-pages/AdminSelfIncomeReports";
-import AdminDirectReferralIncomeReports from "../admin/income-pages/AdminDirectReferralIncomeReports";
 import AllPurchasePackageList from "../admin/AllPurchasePackageList";
 import NewsandNotifs from "../admin/NewsandNotifs";
 import Notification from "../user/Notification";
-import WithdrawalUpdate from "../admin/WithdrawalUpdate";
 import RoiIncomeReport from "../user/income-pages/RoiIncomeHistory";
 import ActiveUsers from "../admin/ActiveUsers";
-import DirectRefferalIncomeHistory from "../user/income-pages/DirectRefferalIncomeHistory";
-import TransactionLimit from "../admin/TransactionLimit";
-import MinMaxLimit from "../admin/MinMaxLimit";
-import MinPackageAmount from "../admin/MinPackageAmount";
-import EmailRegistration from "../user/EmailRegistration";
 import WithdrawalBlockList from "../admin/WithdrawalBlockList";
-import UserTransactionLimit from "../admin/UserTransactionLimit";
 import Profile from "../user/BotxUserPanel/Profile";
 import ServicePackage from "../user/BotxUserPanel/ServicePackage";
-import Miningpackage from "../user/BotxUserPanel/Miningpackage";
-import AllTeam from "../user/BotxUserPanel/AllTeam";
-import WithdrawalPackage from "../user/BotxUserPanel/MakeInvestment";
 import ClubIncome from "../user/BotxUserPanel/incomePages/ClubIncome";
 import MatchingIncome from "../user/BotxUserPanel/incomePages/MatchingIncome";
 import ServiceGenration from "../user/BotxUserPanel/incomePages/ServiceGenration";
@@ -67,12 +33,9 @@ import DepositFund from "../user/BotxUserPanel/Deposit/DepositFund";
 import DepositeInvoice from "../user/BotxUserPanel/Deposit/DepositeInvoice";
 import RankAndReward from "../user/BotxUserPanel/RankAndReward";
 import FundTransfer from "../user/BotxUserPanel/Transfer/FundTransfer";
-import FundRecive from "../user/BotxUserPanel/Transfer/FundRecive";
 import FundTransferReportbot from "../user/BotxUserPanel/Transfer/FundTransferReportbot";
 import WIthDrawFundReport from "../user/BotxUserPanel/FInancial/WIthDrawFundReport";
 import WithDrawFund from "../user/BotxUserPanel/FInancial/WithDrawFund";
-import AccountStatement from "../user/BotxUserPanel/FInancial/AccountStatement";
-import IncomeSummary from "../user/BotxUserPanel/FInancial/IncomeSummary";
 import MakeInvestment from "../user/BotxUserPanel/MakeInvestment";
 import ServicePackageBuyerHistory from "../admin/BotxAdmin/ServicePackageBuyerHistory";
 import TopupUser from "../admin/BotxAdmin/TopupUser";
@@ -81,33 +44,20 @@ import RankReward from "../admin/BotxAdmin/RankReward";
 import ClubIncomeReport from "../admin/BotxAdmin/ClubIncomeReport";
 import InvestmentHistory from "../user/BotxUserPanel/InvestmentHistory";
 import EditProfile from "../admin/BotxAdmin/EditProfile";
-import P2PHistory from "../admin/BotxAdmin/P2PHistory";
 import NestedTeam from "../user/BotxUserPanel/NestedTeam";
 import TopupPackageWallet from "../admin/BotxAdmin/TopupPackageWallet";
 import TopupPackageWalletHistory from "../admin/BotxAdmin/TopupPackageWalletHistory";
-import UserPackageWalletHistory from "../user/BotxUserPanel/UserPackageWalletHistory";
 import Swap from "../user/BotxUserPanel/Swap/Swap";
 import SwapHistory from "../user/BotxUserPanel/Swap/SwapHistory";
-import AchievmentIncome from "../../components/bittronexapages/AchievmentIncome";
 import ActivateBot from "../../components/bittronexapages/ActivateBot";
-import BotPackages from "../../components/bittronexapages/BotPackages";
 import IBIncome from "../../components/bittronexapages/IBIncome";
-import LearderShipAndRankReward from "../../components/bittronexapages/LearderShipAndRankReward";
-import RewarIncome from "../../components/bittronexapages/RewarIncome";
 import TopupMainWallet from "../../components/bittronexapages/TopupMainWallet";
 import TradingLevelIncome from "../../components/bittronexapages/TradingLevelIncome";
-import TradingProfit from "../../components/bittronexapages/TradingProfit";
-import PackageSettings from "../../components/bittronexapages/PackageSettings";
-import GenrationDistribution from "../../components/bittronexapages/GenrationDistribution";
-import LeaderShipRankRewardDetails from "../../components/bittronexapages/LeaderShipRankRewardDetails";
-import BotOrders from "../../components/bittronexapages/BotOrders";
-import BotSettings from "../../components/bittronexapages/BotSettings";
 import BulkRegister from "../../components/bittronexapages/BulkRegister";
 import SetupTransactionPassword from "../../components/bittronexapages/SetupTransactionPassword";
 import FastTrackIncome from "../../components/bittronexapages/FastTrackIncome";
 import ServicePacage from "../admin/BotxAdmin/ServicePacage";
 import AddInvestmentToUser from "../user/BotxUserPanel/Transfer/AddInvestmentToUser";
-import ForgotPassword from "../../components/ui/ForgotPassword";
 import ServicelevelncomeHisotry from "../admin/income-pages/ServicelevelncomeHisotry";
 import AdminIbIncomeHistory from "../admin/income-pages/AdminIbIncomeHistory";
 import AdminFastTrackHistory from "../admin/income-pages/AdminFastTrackHistory";
@@ -118,21 +68,21 @@ import ActivateUserId from "../user/BotxUserPanel/ActivateUserId";
 import Invoice from "../../components/bittronexapages/Invoice";
 import BusinessPlanHistory from "../../components/bittronexapages/BusinessPlanHistory";
 import DeductFund from "../../components/bittronexapages/DeductFund";
-import DeductHistoryByAdmin from "../../screens/admin/BotxAdmin/DeductHistoryByAdmin";
 import AdminDeductFundHistory from "../../screens/admin/BotxAdmin/AdminDeductFundHistory";
-import Persentation from "../admin/BotxAdmin/Persentation";
+import Persentation from "../user/Persentation";
 import ServicePackageActivationHistory from "../../components/bittronexapages/ServicePackageActivationHistory";
 import PrincipleWithdrwalReport from "../../components/bittronexapages/PrincipleWithdrwalReport";
 import AddInvestmentHistory from "../admin/income-pages/AddInvestmentHistory";
 import OtherServicePackageActivationtHistory from "../../components/bittronexapages/OtherServicePackageActivationtHistory";
 import MonthlyClosingReport from "../../components/bittronexapages/MonthlyClosingReport";
-import PortFolio from "../admin/income-pages/PortFolio";
+import PortFolio from "../user/PortFolio";
 import AddBotBusiness from "../../components/bittronexapages/AddBotBusiness";
 import AddFundBusiness from "../../components/bittronexapages/AddFundBusiness";
 import MaintenanceMode from "../admin/MaintenanceMode";
 import DeductInvestment from "../admin/DeductInvestment";
 import Deposit from "../user/Deposit";
-import Roi from "../admin/Roi";
+import WalletSetting from "../user/WalletSetting";
+
 const Authenticate = () => {
   const role = localStorage.getItem("role");
   return (
@@ -155,24 +105,8 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.TRANSACTION_LIMIT}
-              element={
-                <DashboardMain
-                  inner={<TransactionLimit />}
-                  name="Transaction Limit"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.MIN_MAX_LIMIT}
-              element={
-                <DashboardMain
-                  inner={<MinMaxLimit />}
-                  name="Transaction Limit"
-                />
-              }
-            />
+           
+            
             <Route
               path={AuthenticatedRoutes.RANK_REWARD}
               element={
@@ -182,12 +116,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.CUSTOM_ROI}
-              element={
-                <DashboardMain inner={<Roi />} name="Rank Reward Report" />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.ADMIN_IB_INCOME_HISTORY}
               element={
@@ -266,15 +195,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.MIN_PACKAGE_AMOUNT}
-              element={
-                <DashboardMain
-                  inner={<MinPackageAmount />}
-                  name="Min Package Amount"
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.ADMIN_DASHBOARD}
               element={
@@ -322,24 +243,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.SELF_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<AdminSelfIncomeReports />}
-                  name="Self Income History"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.DIRECT_REFERRAL_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<DirectRefferalIncomeHistory />}
-                  name="Direct Referral Income History"
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.ROI_INCOME_HISTORY}
               element={
@@ -349,15 +253,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.DIRECT_REFERRAL_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<AdminDirectReferralIncomeReports />}
-                  name="Airdrop Income History"
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.PURCHASE_PLAN_HISTORY}
               element={
@@ -376,15 +272,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.WITHDRAWAL_UPDATE}
-              element={
-                <DashboardMain
-                  inner={<WithdrawalUpdate />}
-                  name="Withdrawal Details Update"
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.WITHDRAWAL_BLOCK}
               element={
@@ -394,84 +282,15 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.USER_TRANSACTION_LIMIT}
-              element={
-                <DashboardMain
-                  inner={<UserTransactionLimit />}
-                  name="Withdrawal Block List "
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.P2P_HISTORY}
-              element={
-                <DashboardMain inner={<P2PHistory />} name="P2P History" />
-              }
-            />
+           
+            
             <Route
               path={AuthenticatedRoutes.EIDT_PROFILE_ADMIN}
               element={
                 <DashboardMain inner={<EditProfile />} name="Edit Profile" />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.PENDING_WITHDRAWAL_REQUEST}
-              element={
-                <DashboardMain
-                  inner={<PendingWithdrawalRequest />}
-                  name="Pending Withdrawals"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.PACKAGE_SETTINGS}
-              element={
-                <DashboardMain
-                  inner={<PackageSettings />}
-                  name="Package Settings"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.SUBSCRIPTION_PACKAGES}
-              element={
-                <DashboardMain
-                  inner={<PackageSettings />}
-                  name="Subscription Packages"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.GENRATION_DISTRIBUTION}
-              element={
-                <DashboardMain
-                  inner={<GenrationDistribution />}
-                  name="Genrational Distribution"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.LEADERSHIP_RANK_REWARD_DETAILS}
-              element={
-                <DashboardMain
-                  inner={<LeaderShipRankRewardDetails />}
-                  name="Leadership Rank Reward "
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.BOT_ORDERS}
-              element={
-                <DashboardMain inner={<BotOrders />} name="Bot Orders" />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.BOT_SETTINGS}
-              element={
-                <DashboardMain inner={<BotSettings />} name="Bot Settings" />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.BULK_REGISTER}
               element={
@@ -555,21 +374,7 @@ const Authenticate = () => {
               path={AuthenticatedRoutes.USER_PROFILE}
               element={<DashboardMain inner={<ProfilePage />} name="Profile" />}
             />
-            <Route
-              path={AuthenticatedRoutes.BANK_DETAILS}
-              element={
-                <DashboardMain inner={<BankDetails />} name="Bank Detail" />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.REFERRAL_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<ReferralIncomeReports />}
-                  name="Referral Income Report"
-                />
-              }
-            />
+
             <Route
               path={AuthenticatedRoutes.PERSENTATION}
               element={
@@ -579,19 +384,15 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.EMAIL_REGISTRATION}
-              element={
-                <DashboardMain
-                  inner={<EmailRegistration />}
-                  name="Email Registration"
-                />
-              }
-            />
 
             <Route
               path={AuthenticatedRoutes.ALL_TEAM_NETWORK}
-              element={<DashboardMain inner={<Totalteams />} name="All Team" />}
+              element={
+                <DashboardMain
+                  inner={<Totalteams />}
+                  name="All Team"
+                />
+              }
             />
             <Route
               path={AuthenticatedRoutes.ROI_INCOME_REPORT}
@@ -602,15 +403,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.SPIN_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<SpinIncomeReports />}
-                  name="Spin Income Report"
-                />
-              }
-            />
+
             <Route
               path={AuthenticatedRoutes.LEVEL_INCOME_REPORT}
               element={
@@ -629,39 +422,14 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.DIRECT_REFERRAL_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<DirectReferralIncome />}
-                  name="Airdrop Income Report"
-                />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.DEPOSIT_USDT}
               element={
                 <DashboardMain inner={<Deposit />} name="Deposit USDT" />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.ROYALTY_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<RoyaltyIncomeReports />}
-                  name="Royalty Income Report"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.SELF_INCOME_REPORT}
-              element={
-                <DashboardMain
-                  inner={<SelfIncomeReports />}
-                  name="Self Income Report"
-                />
-              }
-            />
+
             <Route
               path={AuthenticatedRoutes.TEAM_TREE}
               element={<DashboardMain inner={<TeamTree />} name="Team Tree" />}
@@ -674,17 +442,9 @@ const Authenticate = () => {
             />
             <Route
               path={AuthenticatedRoutes.WALLET}
-              element={<DashboardMain inner={<Withdrawal />} name="Wallet" />}
+              element={<DashboardMain inner={<WalletSetting />} name="Wallet" />}
             />
-            <Route
-              path={AuthenticatedRoutes.WITHDRAWAL_REPORT}
-              element={
-                <DashboardMain
-                  inner={<WithdrawalReport />}
-                  name="Withdrawal Report"
-                />
-              }
-            />
+
             <Route
               path={AuthenticatedRoutes.PURCHASE_PLAN_HISTORY}
               element={
@@ -694,61 +454,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.OUR_PLANS}
-              element={
-                <DashboardMain
-                  inner={<OverallUserCustomPlan />}
-                  name="Our Plan"
-                />
-              }
-            />
-
-            <Route
-              path={AuthenticatedRoutes.FUND_REQUEST}
-              element={
-                <DashboardMain
-                  inner={<FundRequestForm />}
-                  name="Fund Request"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.FUND_TRANSFER}
-              element={
-                <DashboardMain
-                  inner={<FundTransferForm />}
-                  name="Fund Transfer"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.FUND_REQUEST_HISTORY}
-              element={
-                <DashboardMain
-                  inner={<FundRequestReport />}
-                  name="Fund Request History"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.FUND_TRANSFER_HISTORY}
-              element={
-                <DashboardMain
-                  inner={<FundTransferReport />}
-                  name="Fund Transfer History"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.FUND_RECEIVE_HISTORY}
-              element={
-                <DashboardMain
-                  inner={<FundRecieveReport />}
-                  name="Fund Receive History"
-                />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.TEAM_DIRECT}
               element={
@@ -799,15 +505,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.MINING_PACKAGES}
-              element={
-                <DashboardMain
-                  inner={<Miningpackage />}
-                  name="Mining Package "
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.MAKE_INVESTMENT}
               element={
@@ -817,19 +515,8 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.WITHDRAW_PACKAGE}
-              element={
-                <DashboardMain
-                  inner={<Miningpackage />}
-                  name="Withdraw Package "
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.ALL_TEAM}
-              element={<DashboardMain inner={<AllTeam />} name="All Team" />}
-            />
+            
+           
             <Route
               path={AuthenticatedRoutes.INVESTMENT_HISTORY}
               element={
@@ -839,15 +526,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.USER_PACKAGE_WALLET_HISTORY}
-              element={
-                <DashboardMain
-                  inner={<UserPackageWalletHistory />}
-                  name="Topup Package Wallet History"
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.CLUB_INCOME}
               element={
@@ -872,12 +551,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.REWARD_iNCOME}
-              element={
-                <DashboardMain inner={<RewardIncome />} name="Reward Income " />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.DEPOSIT_FUND}
               element={
@@ -927,12 +601,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.FUND_RECIVE}
-              element={
-                <DashboardMain inner={<FundRecive />} name="Fund Recieve " />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.WITHDRAW_FUND_BOT}
               element={
@@ -948,24 +617,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.ACCOUNT_STATEMENT}
-              element={
-                <DashboardMain
-                  inner={<AccountStatement />}
-                  name="Account Statement "
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.INCOME_SUMMARY}
-              element={
-                <DashboardMain
-                  inner={<IncomeSummary />}
-                  name="Income Summary "
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.SWAP}
               element={
@@ -983,53 +635,23 @@ const Authenticate = () => {
             />
 
             {/* ============================> */}
-            <Route
-              path={AuthenticatedRoutes.ACHIEVEMENT_INCOME}
-              element={
-                <DashboardMain
-                  inner={<AchievmentIncome />}
-                  name="Achievement Income"
-                />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.ACTIVATE_BOT}
               element={
                 <DashboardMain inner={<ActivateBot />} name="Trade Bot" />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.BOT_PACKAGES}
-              element={
-                <DashboardMain inner={<BotPackages />} name="Bot Packages" />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.IB_INCOME}
               element={<DashboardMain inner={<IBIncome />} name="IB Income" />}
             />
-            <Route
-              path={AuthenticatedRoutes.LEADERSHIP_RANKREWARD}
-              element={
-                <DashboardMain
-                  inner={<LearderShipAndRankReward />}
-                  name="Leadership Rank & Reward"
-                />
-              }
-            />
-            <Route
-              path={AuthenticatedRoutes.LEADERSHIP_RANKREWARD}
-              element={
-                <DashboardMain
-                  inner={<LearderShipAndRankReward />}
-                  name="Leadership Rank & Reward"
-                />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.REWARD_INCOME}
               element={
-                <DashboardMain inner={<RewarIncome />} name="Reward Income" />
+                <DashboardMain inner={<RewardIncome />} name="Reward Income" />
               }
             />
             <Route
@@ -1050,15 +672,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.TRADING_PROFIT}
-              element={
-                <DashboardMain
-                  inner={<TradingProfit />}
-                  name="Trading Profit"
-                />
-              }
-            />
+            
             <Route
               path={AuthenticatedRoutes.ACTIVATE_SERVICE_PACKAGE}
               element={
@@ -1130,15 +744,7 @@ const Authenticate = () => {
                 />
               }
             />
-            <Route
-              path={AuthenticatedRoutes.DEDUCT_FUND_HISTORY_BY_ADMIN}
-              element={
-                <DashboardMain
-                  inner={<DeductHistoryByAdmin />}
-                  name="Fund Deduct History"
-                />
-              }
-            />
+           
             <Route
               path={AuthenticatedRoutes.SERVICE_PACKAGE_ACTIVATION_HISTORY}
               element={
@@ -1162,15 +768,6 @@ const Authenticate = () => {
               path={AuthenticatedRoutes.PORTFOLIO}
               element={<DashboardMain inner={<PortFolio />} name="Portfolio" />}
             />
-            {/* <Route
-                            path={AuthenticatedRoutes.FORGOT_PASSWORD}
-                            element={
-                                <DashboardMain
-                                    inner={<ForgotPassword/>}
-                                    name="Forget Password"
-                                />
-                            }
-                        /> */}
           </>
         )}
       </Routes>

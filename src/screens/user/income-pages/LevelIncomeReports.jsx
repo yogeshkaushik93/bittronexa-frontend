@@ -1,10 +1,7 @@
 import "primeicons/primeicons.css";
-import { Column } from "primereact/column";
-import { DataTable } from "primereact/datatable";
 import "primereact/resources/primereact.min.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import { useEffect, useState } from "react";
-// import { useSelector } from "react-redux";
 import { LevelIncomeApi } from "../../../api/user-api";
 import { formatValueWithCurrency, dateFormat } from "../../../utils/additionalFunc";
 import ReusableDataTable from "../../../components/ui/ReusableTable";

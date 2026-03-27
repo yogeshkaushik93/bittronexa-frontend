@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Coins, User, Search, Wallet } from "lucide-react";
+import { Coins} from "lucide-react";
 import Swal from "sweetalert2";
 import ReusableForm from "../../../../components/ui/ReusableForm";
 import PageLoader from "../../../../components/ui/PageLoader";
-import { makeP2PTransfer, swapMainToPackage } from "../../../../api/user-api";
+import { swapMainToPackage } from "../../../../api/user-api";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInfo } from "../../../../api/auth-api";
 import { setUserInfo } from "../../../../redux/slice/UserInfoSlice";

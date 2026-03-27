@@ -1,23 +1,38 @@
-import Header from "../../components/website/Header";
+import { useLocation } from "react-router-dom";
 import "../../styles/website/UserMain.css";
-import UserHome from "./UserHome";
-import videoBg from "../../assets/website/bgVideo.mp4"; // Make sure your video is inside src/assets
-import UsersHome from "./UsersHome";
-import App2 from "../App2";
+import { useEffect } from "react";
+import Hero from "./Hero";
+import Header from "./Header";
+import Benefits from "./Benefits";
+import DiscoverSuccess from "./DiscoverSuccess";
+import ForexBlueprint from "./ForexBlueprint";
+import BlogSection from "./BlogSection";
+import Services from "./Services";
+import Footer from "./Footer";
 
 const UserMain = () => {
+   const location = useLocation();
+  
+    useEffect(() => {
+      if (location.pathname === "/") {
+        localStorage.removeItem("token");
+        localStorage.removeItem("role");
+      }
+    }, [location.pathname]);
+  
   return (
     <>
       <div className="UserMain">
-        {/* <video autoPlay loop muted playsInline>
-          <source src="https://pixabay.com/videos/download/video-47713_medium.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video> */}
-        {/* <Header /> */}
-        {/* <UserHome /> */}
-        {/* <UsersHome /> */}
-
-        <App2/>
+        <div className="pt-[4.75rem] lg:pt-[5.25rem] overflow-hidden bg-black">
+          <Header />
+          <Hero />
+          <Benefits />
+          <DiscoverSuccess />
+          <ForexBlueprint />
+          <BlogSection />
+          <Services />
+          <Footer />
+        </div>
       </div>
     </>
   );

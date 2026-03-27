@@ -1,6 +1,5 @@
 import React, { useCallback } from "react";
-
-const PDF_URL = "../../../../src/assets/bittronexaAsstes/Bittronexapdf.pdf"; // move to env/config if dynamic
+const PDF_URL = "../../../src/assets/bittronexaAsstes/Bittronexapdf.pdf"; 
 
 const Persentation = () => {
   const handleViewPdf = useCallback(() => {

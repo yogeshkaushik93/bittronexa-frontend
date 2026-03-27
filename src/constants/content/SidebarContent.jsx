@@ -1,10 +1,8 @@
-import React from "react";
 import {
   FaUsers,
   FaUserTie,
   FaWallet,
   FaRegNewspaper,
-  FaBusinessTime,
   FaUser,
 } from "react-icons/fa";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
@@ -15,26 +13,19 @@ import {
   LuSettings,
 } from "react-icons/lu";
 import { AuthenticatedRoutes } from "../Routes";
-import { MdOutlineAddCard } from "react-icons/md";
 import { BiMoney, BiSupport } from "react-icons/bi";
-import { TfiAnnouncement } from "react-icons/tfi";
 import {
   BanknoteArrowDown,
   BookAlert,
   FileText,
   FolderSync,
-  History,
-  icons,
   Network,
   Package,
-  ShieldCheck,
 } from "lucide-react";
 import { TbHistoryToggle, TbRecharging } from "react-icons/tb";
-import { MainContent } from "./MainContent";
-import { DoorClosedLocked } from "lucide-react";
 import { BsFillPinAngleFill } from "react-icons/bs";
 import { SiWolframmathematica } from "react-icons/si";
-import { VscActivateBreakpoints } from "react-icons/vsc";
+
 
 export const SidebarContent = {
   user: [
@@ -47,12 +38,6 @@ export const SidebarContent = {
           name: "Dashboard",
           link: AuthenticatedRoutes.USER_DASHBOARD,
         },
-        // {
-        //   id: "Transaction Password",
-        //   icon: <DoorClosedLocked size={22} />,
-        //   name: "Setup Transaction Password",
-        //   link: AuthenticatedRoutes.TRANSACTION_PASS,
-        // },
         {
           id: "Settings",
           icon: <LuSettings size={22} />,
@@ -79,7 +64,7 @@ export const SidebarContent = {
               id: "Service Package",
               icon: <LuHandPlatter size={22} />,
               name: "Subscription Packages",
-              link: AuthenticatedRoutes.SERVICE_PACKAGES, // subscription packages / bot packages
+              link: AuthenticatedRoutes.SERVICE_PACKAGES, 
             },
             {
               id: "Self Service Package Activation History",
@@ -94,30 +79,7 @@ export const SidebarContent = {
           icon: <LuPickaxe size={20} />,
           name: "Arbitrage Bot (Trading)",
           link: AuthenticatedRoutes.ACTIVATE_BOT,
-          // options: [
-          //   {
-          //     id: "Activate Bot",
-          //     name: "Activate Bot",
-          //     link: AuthenticatedRoutes.ACTIVATE_BOT,
-          //   },
-          //   {
-          //     id: "Bot Packages",
-          //     name: "Bot Packages",
-          //     link: AuthenticatedRoutes.BOT_PACKAGES,
-          //   },
-          //   {
-          //     id: "Trading Profit",
-          //     name: "Trading Profit",
-          //     link: AuthenticatedRoutes.TRADING_PROFIT,
-          //   },
-          // ],
         },
-        // {
-        //   id: "Activate User ID",
-        //   icon: <VscActivateBreakpoints size={20} />,
-        //   name: "Activate User ID",
-        //   link: AuthenticatedRoutes.ACTIVATE_USER_ID,
-        // },
         {
           id: "Deposit",
           icon: <BanknoteArrowDown size={20} />,
@@ -135,7 +97,6 @@ export const SidebarContent = {
             },
           ],
         },
-
         {
           id: "Add Investment && Service Package",
           icon: <LuSettings size={20} />,
@@ -164,13 +125,6 @@ export const SidebarContent = {
             },
           ],
         },
-
-        // {
-        //   id: "Package Wallet History",
-        //   icon: <History />,
-        //   name: "Package Wallet History",
-        //   link: AuthenticatedRoutes.USER_PACKAGE_WALLET_HISTORY,
-        // },
         {
           id: "Network",
           icon: <Network size={20} />,
@@ -181,16 +135,6 @@ export const SidebarContent = {
               name: "Direct Team",
               link: AuthenticatedRoutes.TEAM_DIRECT,
             },
-            // {
-            //   id: "Level Team",
-            //   name: "Level Team",
-            //   link: AuthenticatedRoutes.ALL_TEAM,
-            // },
-            // {
-            //   id: "Team Tree",
-            //   name: "Team Tree",
-            //   link: AuthenticatedRoutes.TEAM_TREE,
-            // },
             {
               id: "All Team",
               name: "All Team",
@@ -234,12 +178,11 @@ export const SidebarContent = {
               name: "Fast Track Income",
               link: AuthenticatedRoutes.FAST_TRACK_INCOME,
             },
-            // { id: "Achievement Income", name: "Achievement Income", link: AuthenticatedRoutes.ACHIEVEMENT_INCOME },
             {
               id: "Trading Profit",
               name: "Trading Profit",
               link: AuthenticatedRoutes.ROI_INCOME_REPORT,
-            }, // from bot
+            }, 
             {
               id: "Service Level Income",
               name: "Service Level Income",
@@ -255,29 +198,14 @@ export const SidebarContent = {
               name: "IB Income",
               link: AuthenticatedRoutes.IB_INCOME,
             },
-            //      {
-            //   id: "Leadership",
-            //   icon: <ShieldCheck />,
-            //   name: "Leadership Income",
-            //   link: AuthenticatedRoutes.LEADERSHIP_RANKREWARD, // page listing Rank tiers (Aspire..Royal Crown Ambassador)
-            // },
-            // keep consistent naming with backend reports
           ],
         },
-        // {
-        //   id: "Fund Deduct History ",
-        //   icon: <HiOutlineSquares2X2 size={20} />,
-        //   name: "Fund Deduct History ",
-        //   link: AuthenticatedRoutes.DEDUCT_FUND_HISTORY_BY_ADMIN,
-        // },
-
         {
-          id: "Portfolio",
+          id: "Notification",
           icon: <BookAlert size={22} />,
           name: "Portfolio",
-          link: AuthenticatedRoutes.PORTFOLIO, // subscription packages / bot packages
+          link: AuthenticatedRoutes.PORTFOLIO, 
         },
-
         {
           id: "Financial",
           icon: <FaWallet size={20} />,
@@ -334,13 +262,6 @@ export const SidebarContent = {
             },
           ],
         },
-
-        // {
-        //   id: "Earning Simulation",
-        //   icon: <FaBusinessTime />,
-        //   name: "Earning Simulation",
-        //   link: AuthenticatedRoutes.EARNING_SIMULATION,
-        // },
       ],
     },
     {
@@ -404,7 +325,6 @@ export const SidebarContent = {
               name: "Bulk Register",
               link: AuthenticatedRoutes.BULK_REGISTER,
             },
-            // { id: "Admin Register", name: "Adminv Register", link: AuthenticatedRoutes.BULK_REGISTER },
           ],
         },
 
@@ -455,10 +375,6 @@ export const SidebarContent = {
               name: "Rank Reward History",
               link: AuthenticatedRoutes.RANK_REWARD,
             },
-            // { id: "Achievement Income History", name: "Achievement Income History", link: AuthenticatedRoutes.ACHIEVEMENT_INCOME_HISTORY },
-            // { id: "Trading Profit History", name: "Trading Profit History", link: AuthenticatedRoutes.TRADING_PROFIT_HISTORY },
-            // { id: "Trading Level Income History", name: "Trading Level Income History", link: AuthenticatedRoutes.TRADING_LEVEL_INCOME_HISTORY },
-            // { id: "Reward Income History", name: "Reward Income History", link: AuthenticatedRoutes.REWARD_INCOME_HISTORY },
             {
               id: "IB Income History",
               name: "IB Income History",
@@ -515,12 +431,6 @@ export const SidebarContent = {
           link: AuthenticatedRoutes.PIN_ID,
         },
 
-        // {
-        //   id: "P2P History",
-        //   icon: <HiOutlineSquares2X2 size={20} />,
-        //   name: "P2P History",
-        //   link: AuthenticatedRoutes.P2P_HISTORY,
-        // },
         {
           id: "Withdrawal Requests",
           icon: <FaWallet size={20} />,
@@ -531,7 +441,6 @@ export const SidebarContent = {
               name: "Withdrawal History",
               link: AuthenticatedRoutes.APPROVED_WITHDRAWAL_REQUEST,
             },
-            // { id: "Pending Withdrawals", name: "Pending Withdrawals", link: AuthenticatedRoutes.PENDING_WITHDRAWAL_REQUEST },
             {
               id: "Principal Withdrawal History",
               name: "Principal Withdrawal History",
@@ -570,62 +479,10 @@ export const SidebarContent = {
               name: "Deduct Fund History",
               link: AuthenticatedRoutes.ADMIN_DEDUCT_FUND_HISTORY,
             },
-            // {
-            //   id: "ROI Settings",
-            //   name: "ROI Settings",
-            //   link: AuthenticatedRoutes.CUSTOM_ROI,
-            // },
-            {
-              id: "Deduct Fund History",
-              name: "Deduct Fund History",
-              link: AuthenticatedRoutes.ADMIN_DEDUCT_FUND_HISTORY,
-            },
-            // { id: "Transaction Limit", name: "Transaction Limit", link: AuthenticatedRoutes.TRANSACTION_LIMIT },
-            // { id: "Package Settings", name: "Package Settings", link: AuthenticatedRoutes.PACKAGE_SETTINGS },
           ],
         },
       ],
     },
-
-    // {
-    //   title: "Platform",
-    //   items: [
-    //     {
-    //       id: "SubscriptionPackages",
-    //       icon: <LuHandPlatter />,
-    //       name: "Subscription Packages",
-    //       link: AuthenticatedRoutes.SUBSCRIPTION_PACKAGES,
-    //     },
-    //     {
-    //       id: "GenerationDistribution",
-    //       icon: <MdOutlineAddCard />,
-    //       name: "Generation Distribution",
-    //       link: AuthenticatedRoutes.GENRATION_DISTRIBUTION,
-    //     },
-    //     {
-    //       id: "LeadershipRanks",
-    //       icon: <ShieldCheck />,
-    //       name: "Leadership / Rank & Rewards",
-    //       link: AuthenticatedRoutes.LEADERSHIP_RANK_REWARD_DETAILS,
-    //     },
-    //     // {
-    //     //   id: "EarningSimulation",
-    //     //   icon: <FaBusinessTime />,
-    //     //   name: "Earning Simulation",
-    //     //   link: AuthenticatedRoutes.EARNING_SIMULATION_ADMIN,
-    //     // },
-    //     {
-    //       id: "BotControl",
-    //       icon: <LuPickaxe />,
-    //       name: "Bot / Trading Control",
-    //       options: [
-    //         { id: "Bot Orders", name: "Bot Orders", link: AuthenticatedRoutes.BOT_ORDERS },
-    //         // { id: "Bot Performance", name: "Bot Performance", link: AuthenticatedRoutes.BOT_PERFORMANCE },
-    //         { id: "Bot Settings", name: "Bot Settings", link: AuthenticatedRoutes.BOT_SETTINGS },
-    //       ],
-    //     },
-    //   ],
-    // },
 
     {
       title: "Others",

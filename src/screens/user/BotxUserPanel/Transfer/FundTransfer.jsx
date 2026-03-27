@@ -3,7 +3,7 @@ import { Coins, User, Search, Wallet, Lock } from "lucide-react";
 import Swal from "sweetalert2";
 import ReusableForm from "../../../../components/ui/ReusableForm";
 import PageLoader from "../../../../components/ui/PageLoader";
-import { makeP2PTransfer, fetchUserByUsername, sendOtptoUser, sendOtptoUserP2p } from "../../../../api/user-api";
+import { makeP2PTransfer, fetchUserByUsername,  sendOtptoUserP2p } from "../../../../api/user-api";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInfo } from "../../../../api/auth-api";
 import { setUserInfo } from "../../../../redux/slice/UserInfoSlice";

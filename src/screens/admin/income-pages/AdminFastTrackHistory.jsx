@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 
-import { getFastTrackIncomeHistory, getIbIncomeHistory } from "../../../api/admin-api";
+import { getFastTrackIncomeHistory } from "../../../api/admin-api";
 import ReusableDataTable from "../../../components/ui/ReusableTable";
 
 const AdminIbIncomeHistory = () => {

@@ -3,7 +3,6 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import PageLoader from "../../../components/ui/PageLoader";
 import { getLevelIncomeHistory } from "../../../api/admin-api";
-import { maskMemberIdFourLatter } from "../../../utils/additionalFunc";
 
 const AdminLevelIncomeReports = () => {
   const [loading, setLoading] = useState(false);

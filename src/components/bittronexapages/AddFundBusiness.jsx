@@ -3,7 +3,7 @@ import { Coins, User, Search, Link } from "lucide-react";
 import Swal from "sweetalert2";
 import PageLoader from "../ui/PageLoader";
 import ReusableForm from "../ui/ReusableForm";
-import { addBotBusinessByAdmin, addFundBusinessByAdmin, getUserByName } from "../../api/admin-api";
+import {  addFundBusinessByAdmin, getUserByName } from "../../api/admin-api";
 
 const AddFundBusiness = () => {
     const [loading, setLoading] = useState(false);
