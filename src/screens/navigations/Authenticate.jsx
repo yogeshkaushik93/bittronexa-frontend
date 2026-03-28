@@ -84,6 +84,7 @@ import Deposit from "../user/Deposit";
 import WalletSetting from "../user/WalletSetting";
 import PinUsersHistory from "../admin/PinUsersHistory";
 import UserPinIdHistory from "../user/UserPinIdHistory";
+import Roi from "../admin/Roi";
 
 const Authenticate = () => {
   const role = localStorage.getItem("role");
@@ -214,6 +215,10 @@ const Authenticate = () => {
               }
             />
             <Route
+              path={AuthenticatedRoutes.CUSTOM_ROI}
+              element={<DashboardMain inner={<Roi />} name="Roi Settings" />}
+            />
+            <Route
               path={AuthenticatedRoutes.ALL_USERS}
               element={
                 <DashboardMain inner={<AllUsersList />} name="All Users List" />
@@ -283,7 +288,6 @@ const Authenticate = () => {
                 />
               }
             />
-
 
             <Route
               path={AuthenticatedRoutes.EIDT_PROFILE_ADMIN}
@@ -397,12 +401,7 @@ const Authenticate = () => {
 
             <Route
               path={AuthenticatedRoutes.ALL_TEAM_NETWORK}
-              element={
-                <DashboardMain
-                  inner={<Totalteams />}
-                  name="All Team"
-                />
-              }
+              element={<DashboardMain inner={<Totalteams />} name="All Team" />}
             />
             <Route
               path={AuthenticatedRoutes.ROI_INCOME_REPORT}
@@ -452,7 +451,9 @@ const Authenticate = () => {
             />
             <Route
               path={AuthenticatedRoutes.WALLET}
-              element={<DashboardMain inner={<WalletSetting />} name="Wallet" />}
+              element={
+                <DashboardMain inner={<WalletSetting />} name="Wallet" />
+              }
             />
 
             <Route
@@ -525,7 +526,6 @@ const Authenticate = () => {
                 />
               }
             />
-
 
             <Route
               path={AuthenticatedRoutes.INVESTMENT_HISTORY}
@@ -780,7 +780,12 @@ const Authenticate = () => {
             />
             <Route
               path={AuthenticatedRoutes.USER_PIN_ID_HISTORY}
-                element={<DashboardMain inner={<UserPinIdHistory />} name="Pin ID Activated Users" />}
+              element={
+                <DashboardMain
+                  inner={<UserPinIdHistory />}
+                  name="Pin ID Activated Users"
+                />
+              }
             />
           </>
         )}

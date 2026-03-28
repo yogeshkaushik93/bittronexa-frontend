@@ -27,7 +27,6 @@ import { TbHistoryToggle, TbRecharging } from "react-icons/tb";
 import { BsFillPinAngleFill } from "react-icons/bs";
 import { SiWolframmathematica } from "react-icons/si";
 
-
 export const SidebarContent = {
   user: [
     {
@@ -65,7 +64,7 @@ export const SidebarContent = {
               id: "Service Package",
               icon: <LuHandPlatter size={22} />,
               name: "Subscription Packages",
-              link: AuthenticatedRoutes.SERVICE_PACKAGES, 
+              link: AuthenticatedRoutes.SERVICE_PACKAGES,
             },
             {
               id: "Self Service Package Activation History",
@@ -183,7 +182,7 @@ export const SidebarContent = {
               id: "Trading Profit",
               name: "Trading Profit",
               link: AuthenticatedRoutes.ROI_INCOME_REPORT,
-            }, 
+            },
             {
               id: "Service Level Income",
               name: "Service Level Income",
@@ -205,7 +204,7 @@ export const SidebarContent = {
           id: "Notification",
           icon: <BookAlert size={22} />,
           name: "Portfolio",
-          link: AuthenticatedRoutes.PORTFOLIO, 
+          link: AuthenticatedRoutes.PORTFOLIO,
         },
         {
           id: "Financial",
@@ -490,6 +489,11 @@ export const SidebarContent = {
               id: "Deduct Fund History",
               name: "Deduct Fund History",
               link: AuthenticatedRoutes.ADMIN_DEDUCT_FUND_HISTORY,
+            },
+            {
+              id: "ROI Settings",
+              name: "ROI Settings",
+              link: AuthenticatedRoutes.CUSTOM_ROI,
             },
           ],
         },

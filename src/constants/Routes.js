@@ -115,6 +115,7 @@ export const AuthenticatedRoutes = {
   PERSENTATION: "/persentation",
   // FORGOT_PASSWORD:"/forgot-password"
   ADD_MATCHING: "/add-matching",
+  CUSTOM_ROI: "/roi-settings",
   PIN_ID: "/pin-id",
   DEDUCT_FUND: "/deduct-fund",
   ADMIN_DEDUCT_FUND_HISTORY: "/admin-deduct-fund-history",
@@ -128,5 +129,5 @@ export const AuthenticatedRoutes = {
   MAINTENANCE_MODE: "/maintenance-mode",
   DEDUCT_INVESTMENT: "/deduct-investment",
   PIN_USER_HISTORY: "/pin-user-history",
-  USER_PIN_ID_HISTORY: "/user-pin-id-history"
+  USER_PIN_ID_HISTORY: "/user-pin-id-history",
 };

@@ -15,37 +15,91 @@ import { maskMemberIdFourLatter } from "../../utils/additionalFunc";
 import { useNavigate } from "react-router-dom";
 import { UserCheck } from "lucide-react";
 import { ImBlocked } from "react-icons/im";
+import { backendConfig } from "../../constants/content/MainContent.js";
 
 const AllUsersList = () => {
   const [loading, setLoading] = useState(false);
   const [UserList, setUserList] = useState([]);
   const [blockTradeLoading, setBlockTradeLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [customRoi, setCustomRoi] = useState("");
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const navigate = useNavigate();
 
   const handleBlockTradeIncome = async (row) => {
     try {
       setBlockTradeLoading(true);
-      const payload = { userId: row?._id, tradeIncomeBlocked: !row?.tradeIncomeBlocked };
+      const payload = {
+        userId: row?._id,
+        tradeIncomeBlocked: !row?.tradeIncomeBlocked,
+      };
       const response = await blockTradeIncome(payload);
       if (response?.success) {
         Swal.fire({
           icon: "success",
           title: "Success",
-          text: response?.message || "Trade Income Blocked"
-        })
+          text: response?.message || "Trade Income Blocked",
+        });
         fetchAllUsers();
       }
     } catch (error) {
       Swal.fire({
         icon: "error",
         title: "Error",
-        text: error?.response?.data?.message || "Failed to block trade income"
-      })
+        text: error?.response?.data?.message || "Failed to block trade income",
+      });
     } finally {
       setBlockTradeLoading(false);
     }
-  }
+  };
+  const handleCustomRoiSubmit = async () => {
+    try {
+      if (!customRoi) {
+        Swal.fire("Error", "Please enter ROI %", "error");
+        return;
+      }
+
+      const token = localStorage.getItem("token");
+
+      const res = await fetch(`${backendConfig.base}/admin/custom-roi`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          username: selectedUser,
+          roiPercent: Number(customRoi),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data?.success) {
+        SwalSuccess.fire({
+          icon: "success",
+          title: "Success",
+          text: data?.message || "Custom ROI updated",
+        });
+
+        // reset
+        setShowPopup(false);
+        setCustomRoi("");
+        setSelectedUser(null);
+
+        fetchAllUsers(); // refresh table
+      } else {
+        throw new Error(data?.message);
+      }
+    } catch (error) {
+      SwalError.fire({
+        icon: "error",
+        title: "Error",
+        text: error?.message || "Failed to update ROI",
+      });
+    }
+  };
 
   const fetchAllUsers = async () => {
     try {
@@ -146,7 +200,6 @@ const AllUsersList = () => {
     }
   };
 
-
   useEffect(() => {
     fetchAllUsers();
   }, []);
@@ -234,10 +287,13 @@ const AllUsersList = () => {
         <Button
           label={value ? "Unblock" : "Block"}
           icon={value ? "pi pi-lock-open" : "pi pi-lock"}
-          tooltip={value ? "Click to unblock this user" : "Click to block this user"}
+          tooltip={
+            value ? "Click to unblock this user" : "Click to block this user"
+          }
           tooltipOptions={{ position: "top" }}
-          className={`p-button-sm p-button-rounded ${value ? "p-button-success" : "p-button-danger"
-            }`}
+          className={`p-button-sm p-button-rounded ${
+            value ? "p-button-success" : "p-button-danger"
+          }`}
           style={{
             padding: "0.5rem 1.2rem",
             fontWeight: "600",
@@ -369,10 +425,51 @@ const AllUsersList = () => {
               : "Block Trade Income"}
           </span>
         </Button>
-      )
+      ),
+    },
+    {
+      key: "customRoi",
+      label: "Custom ROI",
+      sortable: false,
+      render: (value, row) => (
+        <Button
+          label="Custom ROI %"
+          className="p-button-sm p-button-rounded p-button-warning bg-gradient-to-r from-yellow-400 to-yellow-600 text-white"
+          style={{
+            padding: "0.5rem 1.2rem",
+            fontWeight: "600",
+            borderRadius: "999px",
+          }}
+          onClick={() => {
+            setSelectedUser(row._id);
+            setShowPopup(true);
+          }}
+        />
+      ),
+    },
+    {
+      key: "Custom Roi Added",
+      label: "Custom Roi Added",
+      sortable: false,
+      render: (value, row) => (
+        <span
+          style={{
+            padding: "6px 12px",
+            borderRadius: "999px",
+            color: "#fff",
+            fontWeight: "600",
+            fontSize: "13px",
+            backgroundColor: row?.customRoiPercent ? "#f59e0b" : "#6b7280",
+            display: "inline-block",
+            minWidth: "80px",
+            textAlign: "center",
+          }}
+        >
+          {row?.customRoiPercent ? `${row.customRoiPercent}%` : "No"}
+        </span>
+      ),
     },
   ];
-
 
   return (
     <>
@@ -382,8 +479,102 @@ const AllUsersList = () => {
           <ReusableDataTable data={UserList} columns={columns} />
         </div>
       </div>
+      {showPopup && (
+        <div style={overlayStyle}>
+          <div style={popupStyle}>
+            <h3
+              style={{
+                marginBottom: "15px",
+                color: "#000",
+                fontSize: "2rem",
+                fontWeight: "600",
+              }}
+            >
+              Enter Custom ROI %
+            </h3>
+
+            <input
+              type="number"
+              placeholder="e.g. 12"
+              value={customRoi}
+              onChange={(e) => setCustomRoi(e.target.value)}
+              style={inputStyle}
+            />
+
+            <div style={btnRow}>
+              <button style={submitBtn} onClick={handleCustomRoiSubmit}>
+                Submit
+              </button>
+              <button style={cancelBtn} onClick={() => setShowPopup(false)}>
+                Cancel
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
 
 export default AllUsersList;
+
+const overlayStyle = {
+  position: "fixed",
+  top: 0,
+  left: 0,
+  width: "100%",
+  height: "100%",
+  background: "rgba(0,0,0,0.6)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  zIndex: 999,
+};
+
+const popupStyle = {
+  background: "#dadada",
+  padding: "20px",
+  borderRadius: "10px",
+  width: "600px",
+  height: "fit-content",
+};
+
+const inputStyle = {
+  width: "100%",
+  padding: "12px",
+  borderRadius: "10px",
+  border: "1px solid rgba(255,255,255,0.2)",
+  background: "#1f2937",
+  color: "#black",
+  fontSize: "2rem",
+  outline: "none",
+  marginBottom: "15px",
+};
+
+const btnRow = {
+  display: "flex",
+  gap: "10px",
+};
+
+const submitBtn = {
+  flex: 1,
+  padding: "10px",
+  borderRadius: "10px",
+  border: "none",
+  background: "linear-gradient(135deg, #6366f1, #818cf8)",
+  color: "#fff",
+  fontWeight: "600",
+  cursor: "pointer",
+  fontSize: "1.5rem",
+};
+
+const cancelBtn = {
+  flex: 1,
+  padding: "10px",
+  borderRadius: "10px",
+  border: "1px solid rgba(255,255,255,0.2)",
+  background: "transparent",
+  color: "red",
+  cursor: "pointer",
+  fontSize: "1.5rem",
+};
