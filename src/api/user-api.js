@@ -657,3 +657,14 @@ export const getActiveServiceOther = async () => {
   });
   return response?.data;
 };
+
+
+export const getPinIdHistory = async () => {
+  const response = await api.get(`${apiURL}/get-pin-id-activated-history`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
+  return response?.data;
+}

@@ -127,4 +127,6 @@ export const AuthenticatedRoutes = {
   ADD_FUND_BUSINESS: "/add-fund-business",
   MAINTENANCE_MODE: "/maintenance-mode",
   DEDUCT_INVESTMENT: "/deduct-investment",
+  PIN_USER_HISTORY: "/pin-user-history",
+  USER_PIN_ID_HISTORY: "/user-pin-id-history"
 };

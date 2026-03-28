@@ -21,6 +21,7 @@ import {
   FolderSync,
   Network,
   Package,
+  Pin,
 } from "lucide-react";
 import { TbHistoryToggle, TbRecharging } from "react-icons/tb";
 import { BsFillPinAngleFill } from "react-icons/bs";
@@ -229,6 +230,12 @@ export const SidebarContent = {
           ],
         },
         {
+          id: "Pin ID Activated Users",
+          name: "Pin ID Activated Users",
+          link: AuthenticatedRoutes.USER_PIN_ID_HISTORY,
+          icon: <Pin size={20} />,
+        },
+        {
           id: "P2P Transfer",
           icon: <FolderSync size={20} />,
           name: "P2P Transfer",
@@ -430,7 +437,12 @@ export const SidebarContent = {
           name: "Pin ID",
           link: AuthenticatedRoutes.PIN_ID,
         },
-
+        {
+          id: "Pin ID History",
+          icon: <BsFillPinAngleFill size={20} />,
+          name: "Pin ID History",
+          link: AuthenticatedRoutes.PIN_USER_HISTORY,
+        },
         {
           id: "Withdrawal Requests",
           icon: <FaWallet size={20} />,

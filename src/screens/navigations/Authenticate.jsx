@@ -82,6 +82,8 @@ import MaintenanceMode from "../admin/MaintenanceMode";
 import DeductInvestment from "../admin/DeductInvestment";
 import Deposit from "../user/Deposit";
 import WalletSetting from "../user/WalletSetting";
+import PinUsersHistory from "../admin/PinUsersHistory";
+import UserPinIdHistory from "../user/UserPinIdHistory";
 
 const Authenticate = () => {
   const role = localStorage.getItem("role");
@@ -105,8 +107,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
-            
+
             <Route
               path={AuthenticatedRoutes.RANK_REWARD}
               element={
@@ -116,7 +117,7 @@ const Authenticate = () => {
                 />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.ADMIN_IB_INCOME_HISTORY}
               element={
@@ -195,7 +196,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.ADMIN_DASHBOARD}
               element={
@@ -243,7 +244,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.ROI_INCOME_HISTORY}
               element={
@@ -253,7 +254,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.PURCHASE_PLAN_HISTORY}
               element={
@@ -272,7 +273,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.WITHDRAWAL_BLOCK}
               element={
@@ -282,15 +283,15 @@ const Authenticate = () => {
                 />
               }
             />
-           
-            
+
+
             <Route
               path={AuthenticatedRoutes.EIDT_PROFILE_ADMIN}
               element={
                 <DashboardMain inner={<EditProfile />} name="Edit Profile" />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.BULK_REGISTER}
               element={
@@ -358,6 +359,15 @@ const Authenticate = () => {
                 />
               }
             />
+            <Route
+              path={AuthenticatedRoutes.PIN_USER_HISTORY}
+              element={
+                <DashboardMain
+                  inner={<PinUsersHistory />}
+                  name="Pin User History"
+                />
+              }
+            />
           </>
         ) : (
           <>
@@ -422,7 +432,7 @@ const Authenticate = () => {
                 />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.DEPOSIT_USDT}
               element={
@@ -454,7 +464,7 @@ const Authenticate = () => {
                 />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.TEAM_DIRECT}
               element={
@@ -505,7 +515,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.MAKE_INVESTMENT}
               element={
@@ -515,8 +525,8 @@ const Authenticate = () => {
                 />
               }
             />
-            
-           
+
+
             <Route
               path={AuthenticatedRoutes.INVESTMENT_HISTORY}
               element={
@@ -526,7 +536,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.CLUB_INCOME}
               element={
@@ -551,7 +561,7 @@ const Authenticate = () => {
                 />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.DEPOSIT_FUND}
               element={
@@ -601,7 +611,7 @@ const Authenticate = () => {
                 />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.WITHDRAW_FUND_BOT}
               element={
@@ -617,7 +627,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.SWAP}
               element={
@@ -635,19 +645,19 @@ const Authenticate = () => {
             />
 
             {/* ============================> */}
-            
+
             <Route
               path={AuthenticatedRoutes.ACTIVATE_BOT}
               element={
                 <DashboardMain inner={<ActivateBot />} name="Trade Bot" />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.IB_INCOME}
               element={<DashboardMain inner={<IBIncome />} name="IB Income" />}
             />
-            
+
             <Route
               path={AuthenticatedRoutes.REWARD_INCOME}
               element={
@@ -672,7 +682,7 @@ const Authenticate = () => {
                 />
               }
             />
-            
+
             <Route
               path={AuthenticatedRoutes.ACTIVATE_SERVICE_PACKAGE}
               element={
@@ -744,7 +754,7 @@ const Authenticate = () => {
                 />
               }
             />
-           
+
             <Route
               path={AuthenticatedRoutes.SERVICE_PACKAGE_ACTIVATION_HISTORY}
               element={
@@ -767,6 +777,10 @@ const Authenticate = () => {
             <Route
               path={AuthenticatedRoutes.PORTFOLIO}
               element={<DashboardMain inner={<PortFolio />} name="Portfolio" />}
+            />
+            <Route
+              path={AuthenticatedRoutes.USER_PIN_ID_HISTORY}
+                element={<DashboardMain inner={<UserPinIdHistory />} name="Pin ID Activated Users" />}
             />
           </>
         )}

@@ -641,3 +641,14 @@ export const deductInvestmentAmount = async (payload) => {
   );
   return response.data;
 };
+
+
+export const getPinUserHistory = async () => {
+  const response = await api.get(`${apiURL}/get-pin-users`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
+  return response.data;
+};
