@@ -641,7 +641,15 @@ export const deductInvestmentAmount = async (payload) => {
   );
   return response.data;
 };
-
+export const assignRankForUser = async (payload) => {
+  const response = await api.post(`${apiURL}/assign-rank-for-user`, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
+  return response.data;
+};
 
 export const getPinUserHistory = async () => {
   const response = await api.get(`${apiURL}/get-pin-users`, {

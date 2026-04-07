@@ -130,4 +130,6 @@ export const AuthenticatedRoutes = {
   DEDUCT_INVESTMENT: "/deduct-investment",
   PIN_USER_HISTORY: "/pin-user-history",
   USER_PIN_ID_HISTORY: "/user-pin-id-history",
+  ASSIGN_RANK: "/assign-rank",
+  ASSIGN_RANK_HISTORY: "/assign-rank-history",
 };

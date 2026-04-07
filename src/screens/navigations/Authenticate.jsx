@@ -85,6 +85,7 @@ import WalletSetting from "../user/WalletSetting";
 import PinUsersHistory from "../admin/PinUsersHistory";
 import UserPinIdHistory from "../user/UserPinIdHistory";
 import Roi from "../admin/Roi";
+import RankAssignment from "../admin/BotxAdmin/RankAssignment";
 
 const Authenticate = () => {
   const role = localStorage.getItem("role");
@@ -115,6 +116,15 @@ const Authenticate = () => {
                 <DashboardMain
                   inner={<RankReward />}
                   name="Rank Reward Report"
+                />
+              }
+            />
+            <Route
+              path={AuthenticatedRoutes.ASSIGN_RANK}
+              element={
+                <DashboardMain
+                  inner={<RankAssignment />}
+                  name="Rank Assignment"
                 />
               }
             />

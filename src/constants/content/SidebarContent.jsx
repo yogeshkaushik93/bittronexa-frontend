@@ -228,12 +228,12 @@ export const SidebarContent = {
             },
           ],
         },
-        {
-          id: "Pin ID Activated Users",
-          name: "Pin ID Activated Users",
-          link: AuthenticatedRoutes.USER_PIN_ID_HISTORY,
-          icon: <Pin size={20} />,
-        },
+        // {
+        //   id: "Pin ID Activated Users",
+        //   name: "Pin ID Activated Users",
+        //   link: AuthenticatedRoutes.USER_PIN_ID_HISTORY,
+        //   icon: <Pin size={20} />,
+        // },
         {
           id: "P2P Transfer",
           icon: <FolderSync size={20} />,
@@ -494,6 +494,11 @@ export const SidebarContent = {
               id: "ROI Settings",
               name: "ROI Settings",
               link: AuthenticatedRoutes.CUSTOM_ROI,
+            },
+            {
+              id: "Assign Rank",
+              name: "Assign Rank",
+              link: AuthenticatedRoutes.ASSIGN_RANK,
             },
           ],
         },
