@@ -11,7 +11,11 @@ import {
 } from "react-icons/fa6";
 import { FiUserCheck, FiTrendingUp } from "react-icons/fi";
 import { Coins } from "lucide-react";
-import { getActivationDate, getBannerListUser, getBusinessDetails } from "../../api/user-api";
+import {
+  getActivationDate,
+  getBannerListUser,
+  getBusinessDetails,
+} from "../../api/user-api";
 import { BiMoneyWithdraw } from "react-icons/bi";
 import Notification from "./Notification";
 
@@ -22,6 +26,7 @@ const UserHome = () => {
   const userInfo = useSelector((state) => state.userInfo?.userInfo);
   const [copied, setCopied] = useState(false);
   const [businessData, setBusinessData] = useState({});
+
   const [loading, setLoading] = useState(false);
   const [activationDate, setActivationDate] = useState(null);
   const [showLoginBanner, setShowLoginBanner] = useState(false);
@@ -49,10 +54,12 @@ const UserHome = () => {
     fetchBannerData();
   }, []);
 
-
   const user = userInfo?.user || {};
-  const activeuser = user?.referedUsers
-  const verifiedCount = activeuser?.filter(u => u?.isVerified === true).length;
+
+  const activeuser = user?.referedUsers;
+  const verifiedCount = activeuser?.filter(
+    (u) => u?.isVerified === true,
+  ).length;
   const affiliateLink = `${window.location.origin}/register?referral=${user?.referralCode}`;
 
   useEffect(() => {
@@ -63,13 +70,11 @@ const UserHome = () => {
       const closeBtnTimer = setTimeout(() => {
         setShowCloseBtn(true);
       }, 5000);
-
       return () => {
         clearTimeout(closeBtnTimer);
       };
     }
   }, []);
-
 
   const shimmer = (rows = 9) =>
     Array.from({ length: rows }).map((_, i) => (
@@ -215,7 +220,6 @@ const UserHome = () => {
     // },
   ];
 
-
   const adminToken = localStorage.getItem("adminToken");
   const adminRole = localStorage.getItem("adminRole");
   const isImpersonating = localStorage.getItem("isImpersonating");
@@ -239,9 +243,7 @@ const UserHome = () => {
       <div className="relative mb-5">
         {isImpersonating && adminRole === "Admin" && adminToken && (
           <div className="bg-yellow-500 text-black text-xl flex items-center justify-center fixed  top-0 left-0 w-full p-3 z-10">
-            <p className="text-white">
-              You are logged in as Admin !
-            </p>
+            <p className="text-white">You are logged in as Admin !</p>
 
             <button
               className="bg-[var(--cyan-text)] py-2 px-4 rounded-md text-black underline font-semibold hover:scale-105 transition-all duration-200"
@@ -253,7 +255,6 @@ const UserHome = () => {
         )}
       </div>
 
-
       <div className="mb-10 text-center">
         <h1 className="text-5xl font-extrabold mb-3">
           Welcome,{" "}
@@ -264,7 +265,9 @@ const UserHome = () => {
         </h1>
         <p className="text-xl text-gray-400">
           Glad to see you again in{" "}
-          <span className="text-[var(--cyan-text)]">BITTRONEXA {user?.name}</span>
+          <span className="text-[var(--cyan-text)]">
+            BITTRONEXA {user?.name}
+          </span>
         </p>
       </div>
 
@@ -354,7 +357,10 @@ const UserHome = () => {
                 { label: "Full Name", value: user?.name },
                 { label: "Username", value: user?.username },
                 // { label: "Email", value: user?.email },
-                { label: "Sponsor Code", value: user?.parentReferedCode || "N/A" },
+                {
+                  label: "Sponsor Code",
+                  value: user?.parentReferedCode || "N/A",
+                },
                 // {
                 //   label: "Service",
                 //   value:
@@ -369,12 +375,14 @@ const UserHome = () => {
                 },
                 {
                   label: "Renewal Date",
-                  value: user?.aiService?.expiryDate ? formatDate(user?.aiService?.expiryDate) : "N/A",
-                  },
-                  {
-                    label: "Service Package",
-                    value: "$125",
-                  },
+                  value: user?.aiService?.expiryDate
+                    ? formatDate(user?.aiService?.expiryDate)
+                    : "N/A",
+                },
+                {
+                  label: "Service Package",
+                  value: "$125",
+                },
                 {
                   label: "Self Investment Amount",
 
@@ -419,7 +427,13 @@ const UserHome = () => {
             <div className="space-y-5 text-lg">
               {[
                 { label: "Direct Team", value: verifiedCount || 0 },
-                { label: "Total Team", value: businessData?.totalTeams + user?.leftTeam + user?.rightTeam || 0 },
+                {
+                  label: "Total Team",
+                  value:
+                    businessData?.totalTeams +
+                      user?.leftTeam +
+                      user?.rightTeam || 0,
+                },
                 {
                   label: "Total Team (Left/Right)",
                   value: `${businessData?.totalLeftTeam + user?.leftTeam || 0} / ${businessData?.totalRightTeam + user?.rightTeam || 0}`,
@@ -434,8 +448,12 @@ const UserHome = () => {
                 },
                 {
                   label: "Trading Team Business (Left/Right)",
-                  value: `$${format6(user.business?.leftBusiness + user?.adminLeftBusiness)} / $${format6(
-                    user?.business?.rightBusiness + user?.adminRightBusiness
+                  value: `$${format6(
+                    (businessData?.totalLeftBusiness ?? 0) +
+                      (user?.adminLeftBusiness ?? 0),
+                  )} / $${format6(
+                    (businessData?.totalRightBusiness ?? 0) +
+                      (user?.adminRightBusiness ?? 0),
                   )}`,
                 },
                 // {
@@ -445,7 +463,7 @@ const UserHome = () => {
                 {
                   label: "Current Month Total Trading Business (Left/Right)",
                   value: `$${format6(
-                    businessData?.currentMonthLeftBusiness 
+                    businessData?.currentMonthLeftBusiness,
                   )} / $${format6(businessData?.currentMonthRightBusiness)}`,
                 },
                 {
