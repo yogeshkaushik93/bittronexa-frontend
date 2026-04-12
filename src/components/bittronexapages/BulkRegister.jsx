@@ -50,8 +50,6 @@ const BulkRegister = () => {
     }
   };
 
-
-
   const handleReset = () => {
     setBaseName("");
     setBaseEmail("");
@@ -105,7 +103,6 @@ const BulkRegister = () => {
                 value={userCount}
                 onChange={(e) => setUserCount(e.target.value)}
                 min="1"
-
                 required
                 placeholder="Numbers of Users"
                 className="w-full px-4 py-3 bg-transparent border !border-gray-600 rounded-lg text-white text-xl"
@@ -120,7 +117,9 @@ const BulkRegister = () => {
               <input
                 type="text"
                 value={referredBy}
-                onChange={(e) => setReferredBy(e.target.value.toUpperCase().trim())}
+                onChange={(e) =>
+                  setReferredBy(e.target.value.toUpperCase().trim())
+                }
                 placeholder="Referral Code"
                 className="w-full px-4 py-3 bg-transparent border !border-gray-600 rounded-lg text-white text-xl"
               />
@@ -151,7 +150,6 @@ const BulkRegister = () => {
                   Right
                 </option>
               </select>
-
             </div>
 
             {/* Buttons */}

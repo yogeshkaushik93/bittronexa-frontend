@@ -27,14 +27,54 @@ const MakeInvestment = () => {
   const userInfo = useSelector((state) => state.userInfo?.userInfo);
   const user = userInfo?.user || {};
 
+  // const handleAction = async () => {
+  //   const value = parseFloat(amount);
+
+  //   if (method === "QR") {
+  //     // Direct Navigation for QR (No OTP/Pass needed)
+  //     navigate("/deposit-usdt", { state: { amount: value } });
+  //   } else {
+  //     // Wallet Logic (OTP/Pass required)
+  //     if (!otp || !pass) {
+  //       return Swal.fire(
+  //         "Required",
+  //         "Transaction Password and OTP are mandatory for Wallet payments.",
+  //         "error",
+  //       );
+  //     }
+
+  //     try {
+  //       setLoading(true);
+  //       const payload = { amount: value, otp, tnxPass: pass };
+  //       const response = await makeInvestmentByPackageWallet(payload);
+  //       if (response?.success) {
+  //         Swal.fire(
+  //           "Success",
+  //           "Investment successful from Package Wallet.",
+  //           "success",
+  //         );
+  //         setAmount("");
+  //         setotp("");
+  //         setpass("");
+  //         window.location.reload();
+  //       }
+  //     } catch (err) {
+  //       Swal.fire(
+  //         "Error",
+  //         err?.response?.data?.message || "Something went wrong",
+  //         "error",
+  //       );
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+  // };
   const handleAction = async () => {
     const value = parseFloat(amount);
 
     if (method === "QR") {
-      // Direct Navigation for QR (No OTP/Pass needed)
       navigate("/deposit-usdt", { state: { amount: value } });
     } else {
-      // Wallet Logic (OTP/Pass required)
       if (!otp || !pass) {
         return Swal.fire(
           "Required",
@@ -44,9 +84,17 @@ const MakeInvestment = () => {
       }
 
       try {
+        if (!value || value < 100) {
+          return Swal.fire(
+            "Invalid Amount",
+            "Minimum investment amount is 100.",
+            "error",
+          );
+        }
         setLoading(true);
         const payload = { amount: value, otp, tnxPass: pass };
         const response = await makeInvestmentByPackageWallet(payload);
+
         if (response?.success) {
           Swal.fire(
             "Success",
@@ -69,7 +117,6 @@ const MakeInvestment = () => {
       }
     }
   };
-
   const handleGetOtp = async () => {
     const res = await sendOtptoUser();
     if (res?.success) {
