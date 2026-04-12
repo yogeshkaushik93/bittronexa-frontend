@@ -149,7 +149,7 @@ const Deposit = () => {
                   <div className="relative group">
                     <input
                       type="number"
-                      placeholder="Min. 20 USDT"
+                      placeholder="Min. 100 USDT"
                       className="w-full h-16 bg-slate-800/50 border-2 border-slate-700 rounded-2xl px-6 text-2xl font-bold text-white outline-none transition-all focus:border-emerald-500 focus:bg-slate-800"
                       value={amount}
                       onChange={(e) => setAmount(e.target.value)}

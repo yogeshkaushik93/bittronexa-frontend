@@ -87,7 +87,7 @@ const MakeInvestment = () => {
         if (!value || value < 100) {
           return Swal.fire(
             "Invalid Amount",
-            "Minimum investment amount is 100.",
+            "Minimum investment amount is 100 USDT.",
             "error",
           );
         }
