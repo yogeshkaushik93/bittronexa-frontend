@@ -98,13 +98,13 @@ const MakeInvestment = () => {
         if (response?.success) {
           Swal.fire(
             "Success",
-            "Investment successful from Package Wallet.",
+            response?.message || "Investment successful from Package Wallet.",
             "success",
           );
           setAmount("");
           setotp("");
           setpass("");
-          window.location.reload();
+          // window.location.reload();
         }
       } catch (err) {
         Swal.fire(

@@ -1,10 +1,14 @@
-
 import { useState } from "react";
 import { Coins, User, Search, Wallet, Lock } from "lucide-react";
 import Swal from "sweetalert2";
 import ReusableForm from "../../../../components/ui/ReusableForm";
 import PageLoader from "../../../../components/ui/PageLoader";
-import { makeP2PTransfer, fetchUserByUsername, sendOtptoUser, makeInvestmentToUser } from "../../../../api/user-api";
+import {
+  makeP2PTransfer,
+  fetchUserByUsername,
+  sendOtptoUser,
+  makeInvestmentToUser,
+} from "../../../../api/user-api";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserInfo } from "../../../../api/auth-api";
 import { setUserInfo } from "../../../../redux/slice/UserInfoSlice";
@@ -20,12 +24,15 @@ const AddInvestmentToUser = () => {
     amount: "",
     type: "",
     otp: "",
-    tnxPass: ""
+    tnxPass: "",
   });
   const dispatch = useDispatch();
 
   const getUserProfileImage = () => {
-    return userInfo?.profileImage || "https://img.icons8.com/3d-fluency/94/guest-male--v2.png";
+    return (
+      userInfo?.profileImage ||
+      "https://img.icons8.com/3d-fluency/94/guest-male--v2.png"
+    );
   };
 
   // input change handler
@@ -66,12 +73,18 @@ const AddInvestmentToUser = () => {
   // 💸 P2P Transfer Function
   const handleP2PTransfer = async () => {
     try {
-      if (!formData.username || !formData.amount || !formData.otp || !formData.type || !formData.tnxPass) {
+      if (
+        !formData.username ||
+        !formData.amount ||
+        !formData.otp ||
+        !formData.type ||
+        !formData.tnxPass
+      ) {
         return Swal.fire({
           icon: "error",
           title: "Error",
           text: "All fields are required",
-        })
+        });
       }
 
       if (!searchedUser) {
@@ -96,7 +109,7 @@ const AddInvestmentToUser = () => {
         amount: formData.amount,
         otp: formData.otp,
         type: formData.type,
-        tnxPass: formData.tnxPass
+        tnxPass: formData.tnxPass,
       };
       const response = await makeInvestmentToUser(payload);
       if (response?.success) {
@@ -122,12 +135,10 @@ const AddInvestmentToUser = () => {
     }
   };
 
-
-
   // inside component
   const handleGetOtp = async () => {
     const res = await sendOtptoUser();
-    console.log(res.data)
+    console.log(res.data);
     if (res?.success) {
       Swal.fire({
         icon: "success",
@@ -139,10 +150,7 @@ const AddInvestmentToUser = () => {
       Swal.fire("Error", res?.message || "Failed to send OTP", "error");
       return false;
     }
-
   };
-
-
 
   return (
     <>
@@ -216,13 +224,13 @@ const AddInvestmentToUser = () => {
                   />
                 </div>
                 <div>
-                  <h6 className="font-semibold text-2xl text-white">{searchedUser?.username}</h6>
+                  <h6 className="font-semibold text-2xl text-white">
+                    {searchedUser?.username}
+                  </h6>
                   <p className="text-xl text-gray-300">{searchedUser?.name}</p>
                   <button
                     className={`py-1 px-4 mt-2 text-lg font-semibold rounded-full ${
-                      searchedUser?.isVerified
-                        ? "bg-green-600"
-                        : "bg-red-600"
+                      searchedUser?.isVerified ? "bg-green-600" : "bg-red-600"
                     }`}
                   >
                     {searchedUser?.isVerified ? "Active" : "Inactive"}
@@ -270,11 +278,10 @@ const AddInvestmentToUser = () => {
                 required={true}
               />
 
-
-                <ReusableForm
+              <ReusableForm
                 label="OTP"
                 name="otp"
-                type="text"                    // text + inputMode gives better UX than number
+                type="text" // text + inputMode gives better UX than number
                 inputMode="numeric"
                 maxLength={6}
                 value={formData.otp}
@@ -284,7 +291,7 @@ const AddInvestmentToUser = () => {
                 required={true}
                 rightButton="Get OTP"
                 onRightButtonClick={handleGetOtp}
-                rightButtonCooldown={30}       // optional: 30 seconds cooldown on success
+                rightButtonCooldown={30} // optional: 30 seconds cooldown on success
                 disabled={!formData.amount || !formData.type}
               />
 
