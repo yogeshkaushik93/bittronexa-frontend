@@ -95,7 +95,7 @@ const AddInvestmentToUser = () => {
         });
       }
 
-      if (Number(formData.amount) < 10) {
+      if (Number(formData.amount) < 100) {
         return Swal.fire({
           icon: "error",
           title: "Invalid Amount",
