@@ -99,7 +99,7 @@ const AddInvestmentToUser = () => {
         return Swal.fire({
           icon: "error",
           title: "Invalid Amount",
-          text: "Amount must be at least $10.",
+          text: "Amount must be at least $100.",
         });
       }
 
