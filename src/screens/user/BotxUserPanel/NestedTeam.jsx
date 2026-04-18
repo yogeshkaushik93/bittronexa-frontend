@@ -19,24 +19,42 @@ const NestedTeam = () => {
       setLoading(true);
       const response = await getLeftRightUsers(userData?._id);
       if (response?.success) {
+        // const updatedData = (response.data || []).map((item) => ({
+        //   ...item,
+
+        //   totalTeam: item.totalTeam || 0,
+
+        //   /* 🔥 BUSINESS */
+        //   totalLeftBusiness:
+        //     Number(item?.business?.leftBusiness || 0) +
+        //     Number(item?.adminBusiness?.adminLeftBusiness || 0),
+
+        //   totalRightBusiness:
+        //     Number(item?.business?.rightBusiness || 0) +
+        //     Number(item?.adminBusiness?.adminRightBusiness || 0),
+
+        //   totalBusiness:
+        //     Number(item?.business?.totalBusiness || 0) +
+        //     Number(item?.adminBusiness?.adminLeftBusiness || 0) +
+        //     Number(item?.adminBusiness?.adminRightBusiness || 0),
+        // }));
+
         const updatedData = (response.data || []).map((item) => ({
           ...item,
-
-          totalTeam: item.totalTeam || 0,
-
-          /* 🔥 BUSINESS */
+          totalTeam:
+            (item.totalTeam || 0) +
+            (item.leftTeam || 0) +
+            (item.rightTeam || 0),
           totalLeftBusiness:
             Number(item?.business?.leftBusiness || 0) +
-            Number(item?.adminBusiness?.adminLeftBusiness || 0),
-
+            Number(item?.adminLeftBusiness || 0),
           totalRightBusiness:
             Number(item?.business?.rightBusiness || 0) +
-            Number(item?.adminBusiness?.adminRightBusiness || 0),
-
+            Number(item?.adminRightBusiness || 0),
           totalBusiness:
             Number(item?.business?.totalBusiness || 0) +
-            Number(item?.adminBusiness?.adminLeftBusiness || 0) +
-            Number(item?.adminBusiness?.adminRightBusiness || 0),
+            Number(item?.adminLeftBusiness || 0) +
+            Number(item?.adminRightBusiness || 0),
         }));
         setData(updatedData);
       }
