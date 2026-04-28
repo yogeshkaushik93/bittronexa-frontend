@@ -86,6 +86,7 @@ import PinUsersHistory from "../admin/PinUsersHistory";
 import UserPinIdHistory from "../user/UserPinIdHistory";
 import Roi from "../admin/Roi";
 import RankAssignment from "../admin/BotxAdmin/RankAssignment";
+import ExperiencePassword from "../admin/ExperiencePassword";
 
 const Authenticate = () => {
   const role = localStorage.getItem("role");
@@ -480,6 +481,15 @@ const Authenticate = () => {
               path={AuthenticatedRoutes.TEAM_DIRECT}
               element={
                 <DashboardMain inner={<DirectTeamLists />} name="Direct Team" />
+              }
+            />
+            <Route
+              path={AuthenticatedRoutes.EXPERIENCE_PASSWORD}
+              element={
+                <DashboardMain
+                  inner={<ExperiencePassword />}
+                  name="Experience Password"
+                />
               }
             />
             <Route

@@ -28,7 +28,7 @@ export async function registerWithWallet(payload) {
     finalPayload,
     {
       withCredentials: true,
-    }
+    },
   );
 
   return response?.data;
@@ -40,19 +40,15 @@ export async function verifyRegisterOtp(payload) {
     payload,
     {
       withCredentials: true,
-    }
+    },
   );
   return response?.data;
 }
 
 export async function loginWithEmailAdminApi(payload) {
-  const response = await api.post(
-    `${loginApiBaseAUrl}/admin/login`,
-    payload,
-    {
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${loginApiBaseAUrl}/admin/login`, payload, {
+    withCredentials: true,
+  });
   return response?.data;
 }
 export async function registerWithEmailApi(payload, ref) {
@@ -61,7 +57,7 @@ export async function registerWithEmailApi(payload, ref) {
     payload,
     {
       withCredentials: true,
-    }
+    },
   );
   return response?.data;
 }
@@ -86,13 +82,9 @@ export async function getAdminInfo() {
 }
 
 export async function loginWithEmailAdmin(payload) {
-  const response = await api.post(
-    `${loginApiBaseAUrl}/admin/login`,
-    payload,
-    {
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${loginApiBaseAUrl}/admin/login`, payload, {
+    withCredentials: true,
+  });
   return response?.data;
 }
 
@@ -108,13 +100,7 @@ export async function createLevel() {
   return response?.data;
 }
 
-
-
-
-
-// ***************************************************************************************************************   
-
-
+// ***************************************************************************************************************
 
 export const registerWithEmail = async (payload) => {
   const response = await api.post(`${loginApiBaseAUrl}/register`, payload, {
@@ -124,19 +110,17 @@ export const registerWithEmail = async (payload) => {
     withCredentials: true,
   });
   return response?.data;
-}
-
+};
 
 export const loginWithEmail = async (payload) => {
-  const response = await api.post(`${loginApiBaseAUrl}/login`, payload, {
+  const response = await api.post(`${loginApiBaseAUrl}/bitro-login`, payload, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true,
   });
   return response?.data;
-}
-
+};
 
 export const logoutUser = (redirectPath = "/login") => {
   try {

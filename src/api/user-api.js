@@ -7,7 +7,7 @@ export async function raiseSupportRequest(payload) {
   const response = await api.post(`${apiURL}/support/create`, payload, {
     headers: {
       Authorization: `Bearer ${token}`,
-      "Content-Type": "multipart/form-data"
+      "Content-Type": "multipart/form-data",
     },
     withCredentials: true,
   });
@@ -52,7 +52,6 @@ export async function buyPlanPackage(payload) {
   });
   return response?.data;
 }
-
 
 export async function getCustomPlanList() {
   const response = await api.get(`${apiURL}/all-packages`);
@@ -123,7 +122,6 @@ export async function clearBannerNotification() {
   return response?.data;
 }
 
-
 export async function registerEmailForUser(payload) {
   const response = await api.post(`${apiURL}/add-email`, payload, {
     headers: {
@@ -143,10 +141,7 @@ export async function verifyEmailOtp(payload) {
   return response?.data;
 }
 
-
-
 // *******************************************************************************************
-
 
 export const getServicePackages = async () => {
   const response = await api.get(`${apiURL}/get-service-package`, {
@@ -157,7 +152,6 @@ export const getServicePackages = async () => {
   });
   return response?.data;
 };
-
 
 export const purchaseServicePackage = async (payload) => {
   const response = await api.post(`${apiURL}/activate-service`, payload, {
@@ -170,14 +164,18 @@ export const purchaseServicePackage = async (payload) => {
 };
 
 export const purchaseServicePackageByPackageWallet = async (payload) => {
-  const response = await api.post(`${apiURL}/activate-service-by-wallet`, payload, {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const response = await api.post(
+    `${apiURL}/activate-service-by-wallet`,
+    payload,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      withCredentials: true,
     },
-    withCredentials: true,
-  });
+  );
   return response?.data;
-}
+};
 
 export const getActiveService = async () => {
   const response = await api.get(`${apiURL}/get-service-history-by-id`, {
@@ -188,7 +186,6 @@ export const getActiveService = async () => {
   });
   return response?.data;
 };
-
 
 export const setWalletAddress = async (payload) => {
   const response = await api.post(`${apiURL}/set-wallet`, payload, {
@@ -210,7 +207,6 @@ export const updateUserProfile = async (payload) => {
   return response?.data;
 };
 
-
 export const getUserDirectTeam = async () => {
   const response = await api.get(`${apiURL}/get-direct-users`, {
     headers: {
@@ -231,7 +227,6 @@ export const getMatchingIncomeHistory = async () => {
   return response?.data;
 };
 
-
 export const getClubIncomeHistory = async () => {
   const response = await api.get(`${apiURL}/get-club-income-history`, {
     headers: {
@@ -242,7 +237,6 @@ export const getClubIncomeHistory = async () => {
   return response?.data;
 };
 
-
 export const getRewardIncomeHistory = async () => {
   const response = await api.get(`${apiURL}/get-matching-rank-reward-income`, {
     headers: {
@@ -252,7 +246,6 @@ export const getRewardIncomeHistory = async () => {
   });
   return response?.data;
 };
-
 
 export const getInvestmentHistory = async () => {
   const response = await api.get(`${apiURL}/investment-history`, {
@@ -294,7 +287,6 @@ export const fetchUserByUsername = async (payload) => {
   return response?.data;
 };
 
-
 export const withdrawalRequest = async (payload) => {
   console.log(token);
 
@@ -318,7 +310,6 @@ export const withdrawalRequestPrinciple = async (payload) => {
   return response?.data;
 };
 
-
 export const getLeftRightUsers = async (userId) => {
   const response = await api.get(`${apiURL}/tree/${userId}`, {
     headers: {
@@ -328,7 +319,6 @@ export const getLeftRightUsers = async (userId) => {
   });
   return response?.data;
 };
-
 
 export const getBusinessDetails = async () => {
   const response = await api.get(`${apiURL}/total-business`, {
@@ -350,27 +340,33 @@ export const getAdminTopupPackageWalletHistory = async () => {
   return response?.data;
 };
 
-
 export const sendOtpForWithdrawal = async () => {
-  const response = await api.post(`${apiURL}/send-otp`, {}, {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const response = await api.post(
+    `${apiURL}/send-otp`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      withCredentials: true,
     },
-    withCredentials: true,
-  });
+  );
   return response?.data;
 };
 
 export const makeInvestmentByPackageWallet = async (payload) => {
-  const response = await api.post(`${apiURL}/buy-package-by-package-wallet`, payload, {
-    headers: {
-      Authorization: `Bearer ${token}`,
+  const response = await api.post(
+    `${apiURL}/buy-package-by-package-wallet`,
+    payload,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      withCredentials: true,
     },
-    withCredentials: true,
-  });
+  );
   return response?.data;
-}
-
+};
 
 export const swapMainToPackage = async (payload) => {
   const response = await api.post(`${apiURL}/swap`, payload, {
@@ -380,41 +376,37 @@ export const swapMainToPackage = async (payload) => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const sendOtptoUserP2p = async (payload) => {
   // console.log(token)
   const response = await api.post(`${apiURL}/send-otp-p2p`, payload, {
-
     headers: {
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const sendOtptoUser = async (payload) => {
   // console.log(token)
   const response = await api.post(`${apiURL}/send-otp`, payload, {
-
     headers: {
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const setupTransactionPassword = async (payload) => {
   // console.log(token)
   const response = await api.post(`${apiURL}/add-tnx-password`, payload, {
-
     headers: {
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true,
   });
   return response?.data;
-}
-
+};
 
 export const getSwapHistory = async () => {
   const response = await api.get(`${apiURL}/get-swap-history`, {
@@ -424,7 +416,7 @@ export const getSwapHistory = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 
 export const getActivationDate = async () => {
   const response = await api.get(`${apiURL}/get-activation-date`, {
@@ -434,7 +426,7 @@ export const getActivationDate = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const getFastTrackIncome = async () => {
   const response = await api.get(`${apiURL}/get-fast-track-income`, {
     headers: {
@@ -443,7 +435,7 @@ export const getFastTrackIncome = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const getIbIncome = async () => {
   const response = await api.get(`${apiURL}/get-ib-income`, {
     headers: {
@@ -452,7 +444,7 @@ export const getIbIncome = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const getServiceLevelIncome = async () => {
   const response = await api.get(`${apiURL}/get-service-level-income`, {
     headers: {
@@ -461,7 +453,7 @@ export const getServiceLevelIncome = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const getInvoice = async () => {
   const response = await api.get(`${apiURL}/get-invoice`, {
     headers: {
@@ -470,7 +462,7 @@ export const getInvoice = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 // export const sendOtpForResetPass = async () => {
 //   const response = await api.post(`${apiURL}/send-reset-otp`, {
 //     headers: {
@@ -481,79 +473,57 @@ export const getInvoice = async () => {
 //   return response?.data;
 // }
 
-
 export async function getUserByName(payload) {
   const token = localStorage.getItem("token");
-  const response = await api.post(
-    `${apiURL}/get-username`,
-    payload,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${apiURL}/get-username`, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
   return response.data;
 }
 export async function resetPassword(payload) {
   const token = localStorage.getItem("token");
-  const response = await api.post(
-    `${apiURL}/reset-password`,
-    payload,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${apiURL}/reset-password`, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
   return response.data;
 }
 export async function sendOtpForResetPass(payload) {
   const token = localStorage.getItem("token");
-  const response = await api.post(
-    `${apiURL}/send-reset-otp`,
-    payload,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${apiURL}/send-reset-otp`, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
   return response.data;
 }
 
 export async function topupUserAccount(payload) {
   const token = localStorage.getItem("token");
-  const response = await api.post(
-    `${apiURL}/activate-service`,
-    payload,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${apiURL}/activate-service`, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
   return response.data;
 }
 export async function getNameByRefrel(payload) {
   const token = localStorage.getItem("token");
-  const response = await api.post(
-    `${apiURL}/get-name`,
-    payload,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      withCredentials: true,
-    }
-  );
+  const response = await api.post(`${apiURL}/get-name`, payload, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    withCredentials: true,
+  });
   return response.data;
 }
-
 
 export const makeInvestmentToUser = async (payload) => {
   const response = await api.post(`${apiURL}/add-investment-to-user`, payload, {
@@ -561,22 +531,18 @@ export const makeInvestmentToUser = async (payload) => {
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true,
-  }
-  );
+  });
   return response.data;
-}
+};
 export const getTotalTeams = async (payload) => {
-
   const response = await api.post(`${apiURL}/get-total-teams`, payload, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
     withCredentials: true,
-  }
-  );
+  });
   return response.data;
-}
-
+};
 
 export const activateUserId = async (payload) => {
   const response = await api.post(`${apiURL}/activate-user-by-pin`, payload, {
@@ -586,8 +552,7 @@ export const activateUserId = async (payload) => {
     withCredentials: true,
   });
   return response.data;
-}
-
+};
 
 export const getBusinessPlanHistory = async (payload) => {
   const response = await api.post(`${apiURL}/get-business`, payload, {
@@ -597,7 +562,7 @@ export const getBusinessPlanHistory = async (payload) => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 
 export const getDeductFundByAdmin = async () => {
   const response = await api.get(`${apiURL}/get-all-deduct-history`, {
@@ -607,7 +572,7 @@ export const getDeductFundByAdmin = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 
 export const getServicePackageActivationHistory = async () => {
   const response = await api.get(`${apiURL}/get-service-history-by-id`, {
@@ -617,7 +582,7 @@ export const getServicePackageActivationHistory = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 
 export const getMonthlyClosingReport = async () => {
   const response = await api.get(`${apiURL}/get-closing-history`, {
@@ -627,7 +592,7 @@ export const getMonthlyClosingReport = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 export const getPrincipalWithdrawalHistory = async () => {
   const response = await api.get(`${apiURL}/get-principal-withdrawal-history`, {
     headers: {
@@ -636,7 +601,7 @@ export const getPrincipalWithdrawalHistory = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 
 export const getInvestedHistory = async () => {
   const response = await api.get(`${apiURL}/get-invested-history`, {
@@ -646,7 +611,7 @@ export const getInvestedHistory = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
 
 export const getActiveServiceOther = async () => {
   const response = await api.get(`${apiURL}/get-service-invest-history`, {
@@ -658,7 +623,6 @@ export const getActiveServiceOther = async () => {
   return response?.data;
 };
 
-
 export const getPinIdHistory = async () => {
   const response = await api.get(`${apiURL}/get-pin-id-activated-history`, {
     headers: {
@@ -667,4 +631,17 @@ export const getPinIdHistory = async () => {
     withCredentials: true,
   });
   return response?.data;
-}
+};
+export const setExperiencePassword = async (payload) => {
+  const response = await api.post(
+    `${apiURL}/set-experience-password`,
+    payload,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      withCredentials: true,
+    },
+  );
+  return response?.data;
+};

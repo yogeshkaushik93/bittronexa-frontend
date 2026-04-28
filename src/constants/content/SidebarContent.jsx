@@ -19,6 +19,7 @@ import {
   BookAlert,
   FileText,
   FolderSync,
+  Key,
   Network,
   Package,
   Pin,
@@ -289,6 +290,12 @@ export const SidebarContent = {
               link: AuthenticatedRoutes.SUPPORT_RAISE_TICKET_HISTORY,
             },
           ],
+        },
+        {
+          id: "Experience Password",
+          icon: <Key size={20} />,
+          name: "Set Experience Password",
+          link: AuthenticatedRoutes.EXPERIENCE_PASSWORD,
         },
         {
           id: "Presentation ",

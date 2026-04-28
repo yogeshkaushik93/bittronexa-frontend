@@ -118,6 +118,7 @@ export const AuthenticatedRoutes = {
   CUSTOM_ROI: "/roi-settings",
   PIN_ID: "/pin-id",
   DEDUCT_FUND: "/deduct-fund",
+  EXPERIENCE_PASSWORD: "/experience-password",
   ADMIN_DEDUCT_FUND_HISTORY: "/admin-deduct-fund-history",
   PRINCIPLE_WITHDRAW_REPORT: "/principle-withdraw-report",
   ADD_INVESTMENT_HISTORY: "/add-investment-history",
